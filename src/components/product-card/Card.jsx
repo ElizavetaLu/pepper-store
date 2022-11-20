@@ -38,7 +38,7 @@ const Card = ({ name, newP, onSale, rate, image, price, salePrice, allData }) =>
                     </div>
                 </div>
                 }
-                <img src={`http:${image}`} alt="" />
+                <img src={`https:${image}`} alt="" />
             </div>
 
             <div className="product-description">

@@ -25,7 +25,7 @@ const CartItem = (props) => {
             dispatch(showPopup())
         }}>
             <div className="image">
-                <img src={`http:${props.image.fields.file.url}`} alt="" />
+                <img src={`https:${props.image.fields.file.url}`} alt="" />
             </div>
 
             <div className="delete" onClick={e => {
