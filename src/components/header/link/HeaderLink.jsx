@@ -4,7 +4,7 @@ import "./link.scss"
 
 const HeaderLink = ({name}) => {
     return (
-        <Link to={`/category/${name}`} className="link" state={name}>
+        <Link to={`/pepper-store/build/category/${name}`} className="link" state={name}>
             <div className="category-item">{name}</div>
         </Link>
     )
