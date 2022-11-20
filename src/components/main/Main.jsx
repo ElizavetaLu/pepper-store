@@ -51,7 +51,7 @@ const Main = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="block" style={{ backgroundImage: 'url("/images/chili-g7ea6ab88a_1920.jpg")' }}>
+                        <div className="block" style={{ backgroundImage: 'url("/pepper-store/build//images/chili-g7ea6ab88a_1920.jpg")' }}>
                             <div className="title">
                                 <div className="lowerCase">How</div>
                                 <div className="">to grow</div>
