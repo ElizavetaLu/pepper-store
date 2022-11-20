@@ -47,7 +47,7 @@ const Header = () => {
 
     return (
         <div className={isHide ? "header hide" : "header"}>
-            <Link to={`/`}>
+            <Link to={`/pepper-store/build/`}>
                 <div className="logo">
                     <img src="/pepper-store/build//images/icons/bell-pepper.png" alt="" />
                 </div>
