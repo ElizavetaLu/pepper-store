@@ -13,10 +13,10 @@ import { sortData } from './sortData'
 function App() {
 
   const dispatch = useDispatch()
-
+  
   useEffect(() => {
     sortData(dispatch)
-  }, [])
+  })
 
 
   return (

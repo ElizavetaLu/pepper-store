@@ -34,14 +34,14 @@ const Chat = () => {
     useEffect(() => {
         const onKeyDown = e => {
             if (e.keyCode === 13) {
-                sendMessage(e);
+                return sendMessage(e);
             }
         };
         document.addEventListener('keydown', onKeyDown);
         return () => {
             document.removeEventListener('keydown', onKeyDown);
         };
-    }, []);
+    });
 
 
     const sendMessage = async (e) => {
