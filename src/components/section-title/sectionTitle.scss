@@ -1,0 +1,19 @@
+@import "../../variables";
+
+
+.title {
+    display: flex;
+    align-items: center;
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: $main_color;
+    }
+
+    .text {
+        margin: 0px 10px;
+        font-size: 30px;
+        color: rgb(12, 12, 12);
+    }
+}

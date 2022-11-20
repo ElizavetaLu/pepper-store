@@ -1,0 +1,17 @@
+.star-rating {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    height: 30px;
+
+    .star-container {
+        .selected {
+            width: 23px;
+        }
+
+        .empty {
+            width: 20px;
+            margin-right: 2px;
+        }
+    }
+}

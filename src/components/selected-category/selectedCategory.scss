@@ -1,0 +1,110 @@
+@import "../../variables";
+
+.category-container {
+    padding-top: $header_height;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+    .category-content {
+        box-sizing: border-box;
+        margin: 0px 40px;
+        @include flex_column_center;
+
+        .sort-row {
+            width: 100%;
+            @include justify_between;
+
+            .row {
+                display: flex;
+
+                .text {
+                    margin-right: 6px;
+                }
+
+                .filter {
+                    display: flex;
+                    align-items: center;
+
+
+                    .vector {
+                        margin-left: 6px;
+                        @include flex_center;
+
+                        img {
+                            width: 10px;
+                        }
+                    }
+                }
+
+                .product-amount {
+                    margin-left: 30px;
+                    color: rgb(128, 128, 128);
+                    font-size: 15;
+                }
+            }
+
+            .row.first {
+                display: flex;
+                align-items: center;
+
+                .item {
+                    display: flex;
+                    margin-right: 10px;
+
+                    .text {
+                        margin-right: 14px;
+                    }
+
+                    .filter {
+                        display: flex;
+                        align-items: center;
+
+
+                        .vector {
+                            margin-left: 5px;
+                            @include flex_center;
+
+                            img {
+                                width: 10px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .allCards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: $section_end;
+        }
+    }
+
+    .chat-icon-container {
+        display: flex;
+        justify-content: space-between;
+        bottom: 20px;
+        right: 20px;
+        left: 0;
+        position: fixed;
+        margin: 0 auto;
+        max-width: 1600px;
+        z-index: 90;
+
+        .chat-icon {
+            background-color: black;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            @include flex_center;
+
+            img {
+                width: 35px;
+            }
+        }
+    }
+}

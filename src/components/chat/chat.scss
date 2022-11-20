@@ -1,0 +1,175 @@
+@import "../../variables";
+
+.chat {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 20px 85px 0px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 100;
+
+
+    .chat-content {
+        box-sizing: border-box;
+        @include panels_color;
+        width: 380px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 30px #00000038;
+        padding-top: 6px;
+        border-radius: 14px;
+
+        .chat-header {
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            height: 80px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            display: flex;
+            border-bottom: 1px solid rgb(234, 234, 234);
+
+            .logo {
+                margin-left: 20px;
+                margin-right: 10px;
+                background-color: #fff;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                @include flex_center;
+
+                img {
+                    width: 35px;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .name {
+                    font-size: 17px;
+                }
+
+                .text {
+                    font-size: 14px;
+                    color: rgb(125, 125, 125);
+                }
+            }
+        }
+
+        .prevProduct {
+            box-sizing: border-box;
+            padding: 4px 10px;
+            height: 80px;
+            display: flex;
+            background-color: #fff;
+            border: 1px solid rgb(231, 231, 231);
+            border-top: none;
+
+            .last-view {
+                width: 90px;
+                display: flex;
+                align-items: center;
+                border-right: 1px solid rgb(231, 231, 231);
+            }
+
+            .productInfo {
+                display: flex;
+
+                .prev-product-img {
+                    box-sizing: border-box;
+                    margin-right: 6px;
+                    height: 73px;
+                    width: 73px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    @include flex_center;
+
+                    img {
+                        border-radius: 20px;
+                        height: 60px;
+                    }
+                }
+
+                .product-data {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+
+                    .row.price {
+                        margin-top: 8px;
+                        display: flex;
+                        align-items: center;
+
+                        .prev-price {
+                            margin-right: 6px;
+                            font-size: 14px;
+                            text-decoration: line-through;
+                        }
+
+                        .current-price {
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: rgb(211, 1, 1);
+                            margin-right: 6px;
+                        }
+
+                        .price {
+                            font-size: 14px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .chat-room {
+            height: 100%;
+            overflow: hidden;
+            overflow-y: scroll;
+            background-color: #fff;
+        }
+
+        .chat-footer {
+            background-color: rgb(247, 247, 247);
+            box-sizing: border-box;
+            height: 60px;
+            border-top: 1.1px solid rgb(231, 231, 231);
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+
+            .msg-input {
+                box-sizing: border-box;
+                padding-left: 15px;
+                width: 100%;
+                outline: none;
+                height: 40px;
+                border: none;
+                font-size: 16px;
+                border-bottom-left-radius: 14px;
+                border-bottom-right-radius: 14px;
+            }
+        }
+    }
+}
+
+.chat.active {
+    opacity: 1;
+    pointer-events: all;
+}

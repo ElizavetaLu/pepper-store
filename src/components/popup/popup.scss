@@ -1,0 +1,247 @@
+@import "../../variables";
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(1px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include flex_center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 9999;
+
+
+    .modal-content {
+        box-sizing: border-box;
+        border: 1px solid #000;
+        padding: 20px;
+        border-radius: 2px;
+        background-color: #fff;
+        width: 850px;
+        display: flex;
+        position: relative;
+
+        .status-icon-new {
+            width: 55px;
+            height: 25px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            .status-container-new {
+                box-sizing: border-box;
+                position: relative;
+                background-color: rgb(0, 170, 51);
+                padding: 4px;
+                @include flex_align_center;
+                justify-content: flex-start;
+                height: 100%;
+
+                .triangle-new {
+                    height: 25px;
+                    width: 9px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: #fff;
+                    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0 50%);
+
+                }
+            }
+        }
+
+        .status-icon-sale {
+            width: 55px;
+            height: 25px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+            .status-container-sale {
+                box-sizing: border-box;
+                position: relative;
+                background-color: rgb(209 0 0);
+                padding: 4px;
+                @include flex_align_center;
+                justify-content: flex-end;
+                height: 100%;
+
+                .triangle-sale {
+                    height: 25px;
+                    width: 9px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #fff;
+                    clip-path: polygon(0% 0, 100% 50%, 0% 100%, 0 50%);
+                }
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: -37px;
+            right: -28px;
+            transform: rotate(45deg);
+            font-size: 40px;
+            cursor: default;
+            color: rgb(81, 81, 81);
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .product-photo {
+            @include flex_center;
+
+            img {
+                max-width: 300px;
+                max-height: 400px;
+            }
+        }
+
+        .product-data-container {
+            @include justify_between;
+            flex-direction: column;
+
+            .product-categories {
+                font-size: 14px;
+                color: rgb(156, 156, 156);
+                margin-bottom: 11px;
+            }
+
+            .product-name {
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+
+            .rate-reviews {
+                @include flex_align_center;
+                margin-bottom: 15px;
+
+                .rate {
+                    @include flex_align_center;
+                    margin-right: 30px;
+                    font-size: 20px;
+
+                    .number {
+                        margin-right: 3px
+                    }
+
+                    .star {
+                        @include flex_center;
+
+                        img {
+                            width: 26px;
+                        }
+                    }
+                }
+
+                .reviews {
+                    position: relative;
+                    font-size: 18px;
+                    @include flex_align_center;
+                    cursor: pointer;
+                    border-bottom: 2px solid transparent;
+
+                    .amount {
+                        margin-right: 7px;
+                    }
+
+
+
+                    .reviews-panel {
+                        padding: 10px;
+                        border: 1px solid rgba(0, 0, 0, 0.768);
+                        border-radius: 2px;
+                        position: absolute;
+                        left: -2px;
+                        top: 20px;
+                        background-color: #fff;
+                        width: 500px;
+                        max-height: 460px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        box-shadow: 0px 0px 10px #0000003d;
+                        overflow: hidden;
+                        overflow-y: scroll;
+
+                        .panel-name {
+                            width: 100%;
+                            font-weight: 600;
+                            padding-bottom: 2px;
+                            border-bottom: 1px solid rgb(204, 204, 204);
+                        }
+
+                        .dumb {
+                            margin-top: 10px;
+                            font-size: 14px;
+                            color: rgb(194, 194, 194);
+                        }
+
+                        .all-reviews {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            width: 100%;
+
+                        }
+                    }
+
+
+                }
+
+                .reviews:hover {
+                    border-bottom: 2px solid #000;
+                }
+            }
+
+            .description {
+                font-size: 17px;
+                color: rgba(0, 0, 0, 0.722);
+                max-height: 100px;
+                overflow: hidden;
+                overflow-y: scroll;
+
+
+                .tittle {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #000;
+                    margin-right: 6px;
+                }
+            }
+
+            .data-row {
+                margin-top: 10px;
+                color: rgba(0, 0, 0, 0.722);
+                @include flex_align_center;
+
+                .title {
+                    font-size: 18px;
+                    margin-right: 6px;
+                    font-weight: 600;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}

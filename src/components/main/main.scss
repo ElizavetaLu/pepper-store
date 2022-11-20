@@ -1,0 +1,190 @@
+@import "../../variables";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .introduction {
+        height: 400px;
+        padding-top: $header_height;
+
+        overflow: hidden;
+        position: relative;
+        @include flex_center;
+        margin-bottom: $section_end;
+
+        img {
+            z-index: -1;
+            width: 100%;
+            position: absolute;
+            top: -49px;
+            right: 0;
+        }
+
+
+        .introduction-text {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            width: 400px;
+            height: 200px;
+            padding: 20px;
+            backdrop-filter: blur(20px);
+            border: 2px solid #fff;
+            position: relative;
+
+            .text {
+                margin-bottom: 20px;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .button {
+                position: absolute;
+                bottom: -20px;
+
+                .btn {
+                    @include main_btn;
+                    text-transform: uppercase;
+                }
+
+                .btn:hover {
+                    border: 5px solid rgba(0, 0, 0, 0);
+                }
+
+                .btn:active {
+                    border: 3px solid rgba(0, 0, 0, 0);
+                }
+            }
+        }
+    }
+
+    .main-content {
+        box-sizing: border-box;
+        margin: 0px 40px;
+
+
+
+
+        .how-to-container {
+            @include flex_column_center;
+
+            .how-to-grow-peppers {
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                box-sizing: border-box;
+
+                .info-container {
+                    box-sizing: border-box;
+                    width: 672px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding-right: 50px;
+
+                    .info-content {
+                        box-sizing: border-box;
+                        position: relative;
+                        padding: 20px;
+                        @include flex_column_center;
+                        border: 2px solid #000;
+
+                        .title-text {
+
+                            font-size: 27px;
+                        }
+
+                        .text {
+                            margin: 30px 0px;
+                            font-size: 20px;
+                            text-align: justify;
+                            width: 400px;
+                        }
+
+                        .button {
+                            position: absolute;
+                            bottom: -20px;
+
+
+                            .btn {
+                                white-space: nowrap;
+                                @include main_btn;
+                                text-transform: uppercase;
+                            }
+
+                            .btn:hover {
+                                border: 5px solid rgba(0, 0, 0, 0);
+                            }
+
+                            .btn:active {
+                                border: 3px solid rgba(0, 0, 0, 0);
+                            }
+                        }
+
+                    }
+                }
+
+                .block {
+                    margin-bottom: $section_end;
+                    box-sizing: border-box;
+                    background-size: cover;
+                    width: 686.25px;
+                    height: 600px;
+                    @include flex_center;
+
+                    .title {
+                        display: flex;
+                        flex-direction: column;
+                        color: #fff;
+                        backdrop-filter: blur(12px);
+                        font-size: 70px;
+                        font-weight: 600;
+                        text-align: center;
+                        padding: 20px;
+                        text-transform: uppercase;
+
+                        .lowerCase {
+                            font-weight: 500;
+                            text-transform: none;
+                            color: rgba(255, 255, 255, 0.919);
+                        }
+
+                        .light-font {
+                            color: rgba(255, 255, 255, 0.919);
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-icon-container {
+        display: flex;
+        justify-content: space-between;
+        bottom: 20px;
+        right: 20px;
+        left: 0;
+        position: fixed;
+        margin: 0 auto;
+        max-width: 1600px;
+        z-index: 90;
+
+        .chat-icon {
+            background-color: black;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            @include flex_center;
+
+            img {
+                width: 35px;
+            }
+        }
+    }
+
+}

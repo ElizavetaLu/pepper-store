@@ -1,0 +1,74 @@
+$main-color: #000;
+$section_end: 80px;
+$section_font_size: 30px;
+$header_height: 64.5px;
+
+@mixin panels_color {
+    background: #BCC572;
+    background: linear-gradient(to bottom, #BCC572 0%, #a9c572 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #BCC572), color-stop(100%, #a9c572));
+    background: -webkit-linear-gradient(top, #BCC572 0%, #a9c572 100%);
+    background: -moz-linear-gradient(top, #BCC572 0%, #a9c572 100%);
+    background: -o-linear-gradient(top, #BCC572 0%, #a9c572 100%);
+    background: -ms-linear-gradient(top, #BCC572 0%, #a9c572 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BCC572', endColorstr='#a9c572', GradientType=0);
+    border: 1px solid #b4bd72;
+    box-shadow: inset 0 1px 0 #A2D481;
+    -webkit-box-shadow: inset 0 1px 0 #A2D481;
+    -moz-box-shadow: inset 0 1px 0 #A2D481;
+}
+
+
+@mixin flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex_align_center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex_column_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@mixin justify_between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin main_btn {
+    box-sizing: border-box;
+    background-color: black;
+    color: #fff;
+    padding: 6px 14px;
+    border: 4px solid #000;
+}
+
+@mixin triangle {
+    height: 19px;
+    width: 9px;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    background-color: #fff;
+    clip-path: polygon(0% 0, 100% 50%, 0% 100%, 0 50%);
+}
+
+@mixin block_tittle {
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border-top: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+}

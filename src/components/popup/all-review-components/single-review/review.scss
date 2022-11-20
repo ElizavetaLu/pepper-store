@@ -1,0 +1,67 @@
+@import "../../../../variables";
+
+.review-wrapper {
+    margin-top: 10px;
+    @include panels_color;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    // border-top-left-radius: 14px;
+    // border-top-right-radius: 14px;
+    border-radius: 14px;
+
+    .review-container {
+        // border-top-left-radius: 14px;
+        // border-top-right-radius: 14px;
+        border-radius: 14px;
+        background-color: #fff;
+        padding: 5px;
+        box-sizing: border-box;
+
+        .customer-info {
+            @include justify_between;
+
+            .customer {
+                display: flex;
+
+                .customer-avatar {
+                    @include flex_center;
+                    margin-right: 7px;
+
+                    img {
+                        width: 40px;
+                    }
+                }
+
+                .customer-name {
+                    .text {
+                        font-size: 16px;
+                    }
+
+                    .date {
+                        font-size: 14px;
+                        color: rgb(187, 187, 187);
+                    }
+                }
+            }
+
+            .customer-rate {
+                @include flex_align_center;
+                font-size: 15px;
+
+                .star {
+                    @include flex_center;
+                    padding-bottom: 3px;
+                    padding-left: 2px;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        .review-text {
+            font-size: 15px;
+        }
+    }
+}

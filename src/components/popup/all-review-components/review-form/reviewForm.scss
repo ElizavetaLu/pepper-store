@@ -1,0 +1,48 @@
+@import "../../../../variables";
+
+.leave-review {
+    border-top: 2px solid rgb(0, 0, 0);
+    padding-top: 29px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .review-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .rate-stars {
+        height: 24px;
+        width: 150px;
+        display: flex;
+        cursor: pointer;
+    }
+
+
+
+    .review-form {
+        width: 100%;
+
+        .review-input {
+            width: 82%;
+            margin-right: 10px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid rgb(195, 195, 195);
+            font-size: 16px;
+            height: 30px;
+        }
+
+        .btn {
+            @include main_btn;
+            font-size: 16px;
+            padding: 5px 10px;;
+        }
+
+        .btn:disabled {
+            color: rgb(106, 106, 106);
+        }
+    }
+}

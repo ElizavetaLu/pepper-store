@@ -1,0 +1,137 @@
+@import "../../../variables";
+
+
+.blocks-container {
+    @include flex_column_center;
+
+    .blocks {
+        margin-top: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        height: 600px;
+        margin-bottom: $section_end;
+
+        .main-block {
+            height: 600px;
+            width: 686.25px;
+            margin-right: 50px;
+            position: relative;
+
+            .image {
+                width: 100%;
+                overflow: hidden;
+                display: inline-block;
+                overflow: hidden;
+
+                img {
+                    width: 712.25px;
+                    height: 600px;
+                    transition: 1s;
+                    display: block;
+                }
+
+                img:hover {
+                    transform: scale(1.09);
+                }
+
+            }
+
+            .tittle {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: flex;
+                padding-right: 30px;
+                @include block_tittle;
+                width: 686px;
+
+                .button {
+                    margin-left: 20px;
+                    position: relative;
+
+                    .btn {
+                        position: absolute;
+                        right: -68px;
+                        bottom: -17px;
+                        @include main_btn;
+                        text-transform: uppercase
+                    }
+
+                    .btn:hover {
+                        border: 5px solid rgba(0, 0, 0, 0);
+                    }
+                    .btn:active {
+                        border: 3px solid rgba(0, 0, 0, 0);
+                    }
+                }
+            }
+
+
+        }
+
+        .small-blocks {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 600px;
+
+            .sm-block {
+                height: 290px;
+                width: 435px;
+                margin-right: 50px;
+                position: relative;
+                display: flex;
+                align-items: flex-end;
+
+                .image {
+                    width: 100%;
+                    overflow: hidden;
+                    display: inline-block;
+                    overflow: hidden;
+
+                    img {
+                        width: 435px;
+                        height: 290px;
+                        transition: 1s;
+                        display: block;
+                    }
+
+                    img:hover {
+                        transform: scale(1.09);
+                    }
+
+                }
+
+                .tittle {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    display: flex;
+                    padding-right: 30px;
+                    @include block_tittle;
+
+                    .button {
+                        margin-left: 20px;
+                        position: relative;
+
+                        .btn {
+                            position: absolute;
+                            right: -68px;
+                            bottom: -17px;
+                            @include main_btn;
+                            text-transform: uppercase
+                        }
+
+                        .btn:hover {
+                            border: 5px solid rgba(0, 0, 0, 0);
+                        }
+                        .btn:active {
+                            border: 3px solid rgba(0, 0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

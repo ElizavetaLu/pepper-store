@@ -1,0 +1,186 @@
+@import "../../variables";
+
+
+.product-card {
+    box-sizing: border-box;
+    margin: 20px 10px;
+    width: 190px;
+    display: flex;
+    border-radius: 2px;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(0, 7, 26, 0.09);
+
+
+    .product-photo {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 180px;
+            height: 160px;
+        }
+
+        .new {
+            width: 45px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+
+            .new-content {
+                position: relative;
+                background-color: rgb(0, 170, 51);
+                padding: 4px;
+                display: flex;
+                justify-content: flex-end;
+
+                .triangle {
+                    @include triangle;
+                }
+            }
+        }
+
+        .sale {
+            width: 45px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+
+            .sale-content {
+                position: relative;
+                background-color: rgb(209 0 0);
+                padding: 4px;
+                display: flex;
+                justify-content: flex-end;
+
+                .triangle {
+                    @include triangle;
+                }
+            }
+        }
+
+    }
+
+    .product-description {
+        position: relative;
+        padding: 8px 8px 30px;
+        box-sizing: border-box;
+        @include flex_column_center;
+
+        .product-data {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .name {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+            }
+
+            .rate {
+                display: flex;
+                padding-right: 5px;
+
+                .star {
+                    img {
+                        width: 17px;
+                    }
+                }
+
+            }
+        }
+
+        .price {
+            display: flex;
+            margin: 10px 0px;
+
+            .sale-price {
+                display: flex;
+
+                .current {
+                    color: rgb(192, 0, 0);
+                    font-weight: 600;
+                    margin-right: 7px;
+                }
+
+                .previous {
+                    color: rgb(38, 38, 38);
+                    text-decoration: line-through
+                }
+            }
+
+            .weigth {
+                margin-left: 10px;
+                font-size: 15px;
+                color: rgb(102, 102, 102)
+            }
+        }
+
+        .qnt {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            padding: 5px 3px;
+            border: 1px solid rgb(207, 207, 207);
+
+            .item {
+                cursor: pointer;
+
+                img {
+                    width: 12px;
+                }
+            }
+
+            .input {
+                text-align: center;
+                font-size: 16px;
+                border: none;
+                width: 28px;
+                margin: 0px 4px;
+                outline: none
+            }
+
+            .input::-webkit-outer-spin-button,
+            .input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            .input[type=number] {
+                -moz-appearance: textfield;
+            }
+        }
+
+        .button {
+            @include flex_center;
+            position: absolute;
+            bottom: -15px;
+
+            .btn {
+                @include main_btn;
+            }
+
+            .btn:hover {
+                border: 5px solid rgba(0, 0, 0, 0);
+            }
+
+            .btn:active {
+                border: 3px solid rgba(0, 0, 0, 0);
+            }
+        }
+    }
+}

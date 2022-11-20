@@ -1,0 +1,118 @@
+@import '../../variables';
+
+
+.item-in-cart {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    position: relative;
+
+    .delete {
+        position: absolute;
+        top: -3px;
+        right: 3px;
+        transform: rotate(45deg);
+        font-size: 24px;
+        color: rgb(50, 50, 50);
+    }
+
+    .delete:hover {
+        color: #000;
+    }
+
+    .image {
+        margin-right: 10px;
+        @include flex_center;
+
+        img {
+            height: 50px;
+        }
+    }
+
+    .column {
+        @include justify_between;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        .row {
+            width: 100%;
+            @include justify_between;
+            align-items: center;
+
+            .name {
+                white-space: nowrap;
+                overflow: hidden;
+                width: 220px;
+                text-overflow: ellipsis;
+            }
+
+            .row-price {
+                justify-content: flex-start;
+                margin: 4px 0px;
+    
+                .prev-price {
+                    font-size: 14px;
+                    text-decoration: line-through;
+                }
+    
+                .current-price {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: rgb(211, 1, 1);
+                    margin-right: 6px;
+                }
+    
+                .price {
+                    font-size: 14px;
+                }
+    
+            }
+            .qnt {
+                display: flex;
+                align-items: center;
+                padding: 5px 4px;
+                border: 1px solid rgb(207, 207, 207);
+
+                .item {
+                    cursor: pointer;
+
+                    img {
+                        width: 10px;
+                    }
+                }
+
+                .input {
+                    text-align: center;
+                    font-size: 14px;
+                    border: none;
+                    width: 35px;
+                    outline: none;
+                }
+
+                .input::-webkit-outer-spin-button,
+                .input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                .input[type=number] {
+                    -moz-appearance: textfield;
+                }
+            }
+
+            .total {
+                font-weight: 600;
+                font-size: 15px;
+            }
+        }
+
+        
+    }
+}
