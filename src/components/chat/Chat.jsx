@@ -34,7 +34,7 @@ const Chat = () => {
     useEffect(() => {
         const onKeyDown = e => {
             if (e.keyCode === 13) {
-                sendMessage();
+                sendMessage(e);
             }
         };
         document.addEventListener('keydown', onKeyDown);
@@ -45,7 +45,6 @@ const Chat = () => {
 
 
     const sendMessage = async (e) => {
-        // if (e && e.preventDefault) e.preventDefault()
         e.preventDefault()
         const { uid } = auth.currentUser;
 
@@ -85,7 +84,7 @@ const Chat = () => {
                         <div className="last-view">Last viewed product:</div>
                         <div className="productInfo">
                             <div className="prev-product-img">
-                                <img src={`http:${prevSelectedProduct.image.fields.file.url}`} alt="" />
+                                <img src={`https:${prevSelectedProduct.image.fields.file.url}`} alt="" />
                             </div>
                             <div className="product-data">
                                 <div className="product-name">{prevSelectedProduct.namerow}</div>
