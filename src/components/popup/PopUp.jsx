@@ -89,7 +89,7 @@ const PopUp = ({ isActive }) => {
                     }
 
                     <div className="product-photo">
-                        <img src={`http:${product.image.fields.file.url}`} alt="" />
+                        <img src={`https:${product.image.fields.file.url}`} alt="" />
                     </div>
 
 

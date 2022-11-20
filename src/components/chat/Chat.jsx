@@ -114,7 +114,7 @@ const Chat = () => {
                     }
                 </div>
 
-                <form className="chat-footer" onSubmit={sendMessage}>
+                <form className="chat-footer" onSubmit={e => sendMessage(e)}>
                     <input
                         type="text"
                         placeholder="Write a message..."
@@ -129,4 +129,4 @@ const Chat = () => {
     )
 }
 
-export default Chat
+export default Chat 

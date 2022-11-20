@@ -13,9 +13,9 @@ const ReviewForm = ({ formValue, setFormValue, sendReview }) => {
 
     return (
         <div className="leave-review">
-            <Rating/>
+            <Rating />
 
-            <form className="review-form" onSubmit={sendReview}>
+            <form className="review-form" onSubmit={e => sendReview(e)}>
                 <input
                     type="text"
                     placeholder="Leave a review..."
