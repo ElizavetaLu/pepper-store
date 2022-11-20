@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    addToCart, 
-    incrementOnCard, 
-    decrementOnCard, 
-    hendChangeOnCard,
+    addToCart,
     showPopup, 
     setProductData } from "../../redux/actions/actions";
 import "./card.scss"
 
 const Card = ({ name, newP, onSale, rate, image, price, salePrice, allData }) => {
 
-    // const [value, setValue] = useState(1)
     const weigthQty = useSelector(state=> state.changeQuantityOnCard)
 
 

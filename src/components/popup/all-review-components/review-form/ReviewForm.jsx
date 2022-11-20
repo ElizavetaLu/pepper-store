@@ -1,15 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setRating, setHover } from "../../../../redux/actions/actions"
 import Rating from "../rating/Rating";
 import "./reviewForm.scss"
 
 const ReviewForm = ({ formValue, setFormValue, sendReview }) => {
-
-    const rating = useSelector(state => state.rating.rating)
-    const hover = useSelector(state => state.rating.hover)
-
-    const dispatch = useDispatch()
 
     return (
         <div className="leave-review">
