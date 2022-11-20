@@ -11,7 +11,7 @@ const CategoryBlock = ({ name, description, image }) => {
                 </div>
             </div>
             <div className="category-picture">
-                <img src={`/images/${image}`} alt="" />
+                <img src={`/pepper-store/build//images/${image}`} alt="" />
             </div>
         </div>
     )

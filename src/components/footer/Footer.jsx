@@ -5,7 +5,7 @@ import "./footer.scss"
 const Footer = () => {
     return (
         <div className="footer">
-            <Link to={`/`}>
+            <Link to={`/pepper-store/build/`}>
                 <div className="logo">
                     <img src="/pepper-store/build//images/icons/bell-pepper.png" alt="" />
                 </div>
