@@ -7,6 +7,7 @@ import products from "./products";
 import reviews from "./reviews";
 import considerSection from "./considerSection";
 import rating from "./rating";
+import showSuccess from "./showSuccess";
 
 const allReducers = combineReducers({
     cart,
@@ -16,7 +17,8 @@ const allReducers = combineReducers({
     chat,
     reviews,
     considerSection,
-    rating
+    rating,
+    showSuccess
 })
 
 export default allReducers

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../cart-item/CartItem";
 import "./header.scss"
 import HeaderLink from "./link/HeaderLink";
+import { cleanUpCart } from "../../redux/actions/actions"
 
 const defaultOffset = 200;
 let lastScroll = 0;
@@ -31,10 +32,9 @@ const Header = () => {
     }, [isHide])
 
 
-
+    const dispatch = useDispatch()
 
     const categories = useSelector(state => state.products.categories)
-
     const cartItems = useSelector(state => state.cart)
 
     const totals = cartItems.length !== 0 ? cartItems.map(item => {
@@ -75,7 +75,7 @@ const Header = () => {
                 <div className="header-item">
 
                     <input type="checkbox" id="side-checkbox" />
-                    <div className="side-panel" style={{height: isHide? "100vh": "calc((100vh - 74.5px))"}}>
+                    <div className="side-panel" style={{ height: isHide ? "100vh" : "calc((100vh - 74.5px))" }}>
                         <label className="side-button-2" htmlFor="side-checkbox">+</label>
                         {cartItems.length === 0
                             ? <div className="side-title">Your cart is empty...</div>
@@ -95,7 +95,9 @@ const Header = () => {
                         <div className="total-cost">
                             <div className="total">Total cost: ${Number((totals.reduce((prev, cur) => prev + cur, 0)).toFixed(2))}</div>
                             <div className="button">
-                                <button className="btn">To Check Out</button>
+                                <button className="btn" onClick={() => {
+                                    dispatch(cleanUpCart())
+                                }}>To Check Out</button>
                             </div>
                         </div>
 

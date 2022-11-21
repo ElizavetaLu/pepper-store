@@ -3,6 +3,7 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const INCREMENT_IN_CART = 'INCREMENT_IN_CART';
 export const DECREMENT_IN_CART = 'DECREMENT_IN_CART';
 export const ON_HAND_CHANGE_IN_CART = 'ON_HAND_CHANGE_IN_CART';
+export const CLEAN_UP_CART = 'CLEAN_UP_CART';
 
 
 export const GET_ON_SALE = 'GET_ON_SALE';
@@ -27,6 +28,7 @@ export const SHOW_REVIEWS = 'SHOW_REVIEWS';
 export const SELECT_SECTION = 'SELECT_SECTION';
 
 
+export const SHOW_SUCCESS = 'SHOW_SUCCESS';
 export const SET_RATING = 'SET_RATING';
 export const SET_HOVER = 'SET_HOVER';
 

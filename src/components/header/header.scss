@@ -2,13 +2,12 @@
 
 .header {
     z-index: 100;
-    max-width: 1600px;
-    height: $header_height;
-    @include justify_between;
-    align-items: center;
     box-sizing: border-box;
     padding: 10px 40px;
+    height: $header_height;
     @include panels_color;
+    @include justify_between;
+    align-items: center;
     position: fixed;
     left: 0;
     right: 0;
@@ -113,9 +112,9 @@
 
                 .total-cost {
                     position: relative;
-                    bottom: 0;
-                    @include justify_between;
-                    align-items: center;
+                    bottom: 50px;
+                    display: flex;
+                    flex-direction: column;
                     padding-top: 15px;
                     margin-top: 20px;
                     border-top: 2px solid #4a4a4a;
@@ -125,6 +124,8 @@
                     }
 
                     .button {
+                        margin-top: 15px;
+                        cursor: pointer;
                         .btn {
                             @include main_btn;
                             font-size: 17px;
@@ -214,6 +215,5 @@
 #side-checkbox:checked+.side-panel {
     right: -1px;
 }
-
 
 

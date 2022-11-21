@@ -3,7 +3,8 @@ import {
     REMOVE_FROM_CART,
     INCREMENT_IN_CART,
     DECREMENT_IN_CART,
-    ON_HAND_CHANGE_IN_CART
+    ON_HAND_CHANGE_IN_CART,
+    CLEAN_UP_CART
 } from "../actions/types"
 
 const initialState = []
@@ -52,9 +53,12 @@ const cart = (state = initialState, { type, allData, value, name }) => {
             return [...state.filter(elem => elem.namerow !== name)]
         }
 
-
-        default:
+        case CLEAN_UP_CART: {
+            state = []
             return state
+        }
+
+        default: return state
     }
 }
 

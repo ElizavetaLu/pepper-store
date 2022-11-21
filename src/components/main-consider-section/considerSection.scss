@@ -4,7 +4,9 @@
     margin-bottom: $section_end;
     @include flex_column_center;
     position: relative;
-
+    max-width: 1600px;
+    margin: 0px auto;
+    
     .navigation {
         width: 103%;
         position: absolute;
@@ -15,7 +17,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: $main_color;
+            background-color: #000;
             @include flex_center;
 
             img {
@@ -44,12 +46,12 @@
         }
 
         .item:hover {
-            border-bottom: 2px solid $main_color;
+            border-bottom: 2px solid $main-boreder-color;
         }
 
         .item.active {
-            color: $main_color;
-            border-bottom: 2px solid $main_color;
+            color: rgb(30 30 30 / 95%);
+            border-bottom: 2px solid $main-boreder-color;
         }
     }
 
