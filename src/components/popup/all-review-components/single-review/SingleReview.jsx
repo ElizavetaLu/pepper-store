@@ -13,15 +13,15 @@ const SingleReview = ({ review, time, rating }) => {
                         </div>
                         <div className="customer-name">
                             <div className="text">Customer Name</div>
-                            <div className="date">{time.slice(0,24)}</div>
+                            <div className="date">{time.slice(0, 24)}</div>
                         </div>
                     </div>
-                    <div className="customer-rate">
-                        <div className="number">{rating?.rating}</div>
+                    {rating && <div className="customer-rate">
+                        <div className="number">{rating}</div>
                         <div className="star">
                             <img src="/pepper-store/build//images/icons/star.png" alt="" />
                         </div>
-                    </div>
+                    </div>}
                 </div>
                 <div className="review-text">{review}</div>
             </div>

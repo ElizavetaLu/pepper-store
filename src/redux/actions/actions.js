@@ -16,7 +16,9 @@ import {
     SHOW_REVIEWS,
     SELECT_SECTION,
     SET_RATING,
-    SET_HOVER
+    SET_HOVER,
+    CLEAN_UP_CART,
+    SHOW_SUCCESS
 } from "./types"
 
 
@@ -35,6 +37,8 @@ export const onHandChangeInCart = (value, name) => ({
     value,
     name
 })
+export const cleanUpCart = () => ({ type: CLEAN_UP_CART })
+export const showSuccess = () => ({ type: SHOW_SUCCESS })
 
 
 

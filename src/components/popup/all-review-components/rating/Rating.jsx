@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { setRating, setHover } from "../../../../redux/actions/actions"
 import "./rating.scss"
+import { useDispatch, useSelector } from "react-redux";
 
 const Rating = () => {
 
-    const [rating, setRating] = useState(0);
-    const [hover, setHover] = useState(0);
-
+    const rating = useSelector(state => state.rating.rating)
+    const hover = useSelector(state => state.rating.hover)
+    const dispatch = useDispatch()
 
     return (
         <div className="star-rating">
@@ -15,9 +17,9 @@ const Rating = () => {
                     <div
                         className="star-container"
                         key={indx}
-                        onClick={() => setRating(indx)}
-                        onMouseEnter={() => setHover(indx)}
-                        onMouseLeave={() => setHover(rating)}
+                        onClick={() => dispatch(setRating(indx))}
+                        onMouseEnter={() => dispatch(setHover(indx))}
+                        onMouseLeave={() => dispatch(setHover(rating))}
                     >
                         {indx <= (hover || rating)
                             ? <img src="/pepper-store/build//images/icons/star.png" alt="" className="selected" />

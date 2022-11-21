@@ -1,6 +1,7 @@
 @import "../../variables";
 
 .footer {
+    z-index: 100;
     width: 100%;
     box-sizing: border-box;
     padding: 50px 40px;
@@ -41,7 +42,7 @@
         margin: 20px 0px;
         width: 50%;
         height: 2px;
-        background-color: $main-color;
+        background-color: $main-boreder-color;
     }
 
     .company {

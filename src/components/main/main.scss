@@ -3,7 +3,9 @@
 .main {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100%;
+    position: relative;
+
 
     .introduction {
         height: 400px;
@@ -80,18 +82,16 @@
 
                 .info-container {
                     box-sizing: border-box;
-                    width: 672px;
+                    width: 510px;
                     display: flex;
                     align-items: center;
-                    justify-content: flex-end;
-                    padding-right: 50px;
 
                     .info-content {
                         box-sizing: border-box;
                         position: relative;
                         padding: 20px;
                         @include flex_column_center;
-                        border: 2px solid #000;
+                        border: 2px solid $main-boreder-color;
 
                         .title-text {
 
@@ -171,8 +171,7 @@
         left: 0;
         position: fixed;
         margin: 0 auto;
-        max-width: 1600px;
-        z-index: 90;
+        z-index: 1;
 
         .chat-icon {
             background-color: black;

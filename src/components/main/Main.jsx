@@ -17,6 +17,8 @@ const Main = () => {
 
     return (
         <div className="main" >
+
+
             <div className="introduction">
                 <img src="/pepper-store/build//images/chilli-seeds_1200x1200.webp" alt="" />
 

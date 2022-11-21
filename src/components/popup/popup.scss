@@ -16,13 +16,17 @@
 
     .modal-content {
         box-sizing: border-box;
-        border: 1px solid #000;
+        border: 1px solid $main-boreder-color;
         padding: 20px;
         border-radius: 2px;
         background-color: #fff;
         width: 850px;
+        height: 550px;
         display: flex;
+        flex-direction: column;
         position: relative;
+        overflow: hidden;
+        overflow-y: scroll;
 
         .status-icon-new {
             width: 55px;
@@ -91,11 +95,9 @@
 
         .close {
             position: absolute;
-            top: -37px;
-            right: -28px;
             transform: rotate(45deg);
             font-size: 40px;
-            cursor: default;
+            cursor: pointer;
             color: rgb(81, 81, 81);
         }
 
@@ -103,139 +105,121 @@
             color: #000;
         }
 
-        .product-photo {
-            @include flex_center;
+        .product-data-container {
+            display: flex;
 
-            img {
-                max-width: 300px;
-                max-height: 400px;
+            .product-photo {
+                @include flex_center;
+
+                img {
+                    max-width: 300px;
+                    max-height: 400px;
+                }
             }
+
+            .product-data {
+                @include justify_between;
+                flex-direction: column;
+
+                .product-categories {
+                    font-size: 14px;
+                    color: rgb(156, 156, 156);
+                    margin-bottom: 11px;
+                }
+
+                .product-name {
+                    font-size: 30px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+
+                .rate-reviews {
+                    @include flex_align_center;
+                    margin-bottom: 15px;
+
+                    .rate {
+                        @include flex_align_center;
+                        margin-right: 30px;
+                        font-size: 20px;
+
+                        .number {
+                            margin-right: 3px
+                        }
+
+                        .star {
+                            @include flex_center;
+
+                            img {
+                                width: 26px;
+                            }
+                        }
+                    }
+
+                    .reviews {
+                        position: relative;
+                        font-size: 18px;
+                        @include flex_align_center;
+                        border-bottom: 2px solid transparent;
+
+                        .amount {
+                            margin-right: 7px;
+                        }
+
+                    }
+
+                }
+
+                .description {
+                    font-size: 17px;
+                    color: rgba(0, 0, 0, 0.722);
+                    max-height: 100px;
+                    overflow: hidden;
+                    overflow-y: scroll;
+
+
+                    .tittle {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #000;
+                        margin-right: 6px;
+                    }
+                }
+
+                .data-row {
+                    margin-top: 10px;
+                    color: rgba(0, 0, 0, 0.722);
+                    @include flex_align_center;
+
+                    .title {
+                        font-size: 18px;
+                        margin-right: 6px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                }
+            }
+
         }
 
-        .product-data-container {
-            @include justify_between;
-            flex-direction: column;
-
-            .product-categories {
-                font-size: 14px;
-                color: rgb(156, 156, 156);
-                margin-bottom: 11px;
-            }
-
-            .product-name {
-                font-size: 30px;
+        .reviews-panel {
+            .panel-name {
+                width: 100%;
                 font-weight: 600;
-                margin-bottom: 15px;
+                padding-bottom: 2px;
+                border-bottom: 1px solid rgb(204, 204, 204);
             }
 
-            .rate-reviews {
-                @include flex_align_center;
-                margin-bottom: 15px;
-
-                .rate {
-                    @include flex_align_center;
-                    margin-right: 30px;
-                    font-size: 20px;
-
-                    .number {
-                        margin-right: 3px
-                    }
-
-                    .star {
-                        @include flex_center;
-
-                        img {
-                            width: 26px;
-                        }
-                    }
-                }
-
-                .reviews {
-                    position: relative;
-                    font-size: 18px;
-                    @include flex_align_center;
-                    cursor: pointer;
-                    border-bottom: 2px solid transparent;
-
-                    .amount {
-                        margin-right: 7px;
-                    }
-
-
-
-                    .reviews-panel {
-                        padding: 10px;
-                        border: 1px solid rgba(0, 0, 0, 0.768);
-                        border-radius: 2px;
-                        position: absolute;
-                        left: -2px;
-                        top: 20px;
-                        background-color: #fff;
-                        width: 500px;
-                        max-height: 460px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        box-shadow: 0px 0px 10px #0000003d;
-                        overflow: hidden;
-                        overflow-y: scroll;
-
-                        .panel-name {
-                            width: 100%;
-                            font-weight: 600;
-                            padding-bottom: 2px;
-                            border-bottom: 1px solid rgb(204, 204, 204);
-                        }
-
-                        .dumb {
-                            margin-top: 10px;
-                            font-size: 14px;
-                            color: rgb(194, 194, 194);
-                        }
-
-                        .all-reviews {
-                            display: flex;
-                            flex-direction: column-reverse;
-                            width: 100%;
-
-                        }
-                    }
-
-
-                }
-
-                .reviews:hover {
-                    border-bottom: 2px solid #000;
-                }
-            }
-
-            .description {
-                font-size: 17px;
-                color: rgba(0, 0, 0, 0.722);
-                max-height: 100px;
-                overflow: hidden;
-                overflow-y: scroll;
-
-
-                .tittle {
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: #000;
-                    margin-right: 6px;
-                }
-            }
-
-            .data-row {
+            .dumb {
                 margin-top: 10px;
-                color: rgba(0, 0, 0, 0.722);
-                @include flex_align_center;
+                font-size: 14px;
+                color: rgb(194, 194, 194);
+            }
 
-                .title {
-                    font-size: 18px;
-                    margin-right: 6px;
-                    font-weight: 600;
-                    color: #000;
-                }
+            .all-reviews {
+                display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+
             }
         }
     }
