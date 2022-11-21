@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pepper-store/build/static/css/main.d4cd5058.css",
-    "main.js": "/pepper-store/build/static/js/main.1d5b3f54.js",
+    "main.js": "/pepper-store/build/static/js/main.dee552ba.js",
     "static/js/787.61ec710e.chunk.js": "/pepper-store/build/static/js/787.61ec710e.chunk.js",
     "index.html": "/pepper-store/build/index.html",
     "main.d4cd5058.css.map": "/pepper-store/build/static/css/main.d4cd5058.css.map",
-    "main.1d5b3f54.js.map": "/pepper-store/build/static/js/main.1d5b3f54.js.map",
+    "main.dee552ba.js.map": "/pepper-store/build/static/js/main.dee552ba.js.map",
     "787.61ec710e.chunk.js.map": "/pepper-store/build/static/js/787.61ec710e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d4cd5058.css",
-    "static/js/main.1d5b3f54.js"
+    "static/js/main.dee552ba.js"
   ]
 }
