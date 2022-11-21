@@ -27,7 +27,6 @@ const PopUp = ({ isActive }) => {
         e.preventDefault()
         const { uid } = auth.currentUser;
 
-        console.log(rating)
         await reviewsRef.add({
             product: product.namerow,
             text: formValue,
@@ -150,7 +149,7 @@ const PopUp = ({ isActive }) => {
                                     return (<SingleReview
                                         key={indx}
                                         review={review.text}
-                                        rating={review.rating.rating}
+                                        rating={review.rating}
                                         auth={auth}
                                         time={review.createdAt ? new Date(review.createdAt.seconds * 1000).toString() : '--:--'}
                                     />)
