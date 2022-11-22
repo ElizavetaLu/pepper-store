@@ -218,7 +218,7 @@
             .all-reviews {
                 display: flex;
                 flex-direction: column-reverse;
-                width: 100%;
+                align-items: flex-start;
 
             }
         }
