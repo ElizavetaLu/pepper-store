@@ -2,7 +2,7 @@ import React from "react";
 import "./review.scss"
 
 const SingleReview = ({ review, time, rating }) => {
-
+console.log(rating)
     return (
         <div className="review-wrapper">
             <div className="review-container">

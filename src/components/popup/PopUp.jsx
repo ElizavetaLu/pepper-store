@@ -45,7 +45,7 @@ const PopUp = ({ isActive }) => {
     const reviewsPanel = useSelector(state => state.reviews)
 
 
-    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : null
+    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : []
 
 
     return (

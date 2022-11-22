@@ -5,13 +5,11 @@
     @include panels_color;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
-    // border-top-left-radius: 14px;
-    // border-top-right-radius: 14px;
+    min-width: 300px;
+    max-width: 100%;
     border-radius: 14px;
 
     .review-container {
-        // border-top-left-radius: 14px;
-        // border-top-right-radius: 14px;
         border-radius: 14px;
         background-color: #fff;
         padding: 5px;
@@ -62,6 +60,7 @@
 
         .review-text {
             font-size: 15px;
+            margin-left: 10px;
         }
     }
 }
