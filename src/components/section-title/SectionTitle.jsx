@@ -1,4 +1,3 @@
-import React from "react";
 import "./sectionTitle.scss"
 
 const SectionTitle = ({title}) => {

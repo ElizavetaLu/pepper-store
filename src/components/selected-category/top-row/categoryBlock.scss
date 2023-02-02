@@ -7,27 +7,24 @@
     width: 100%;
     margin-bottom: $section_end;
 
-
     .container-cat {
         @include flex_center;
         width: 50%;
-
 
         .category-text {
             max-width: 70%;
             border: 2px solid #000;
             padding: 20px;
 
-            .category-title{
+            .category-title {
                 text-align: center;
                 font-size: 30px;
                 margin-bottom: 10px;
-
             }
 
-            .category-description{
+            .category-description {
                 font-size: 20px;
-                text-align:justify;
+                text-align: justify;
             }
         }
     }

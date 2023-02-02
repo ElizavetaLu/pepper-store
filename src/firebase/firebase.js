@@ -23,7 +23,7 @@ initializeFirestore(firebaseConfig, {
 })
 
 signInAnonymously(auth)
-    .then(() => { })
+    .then(() => {})
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

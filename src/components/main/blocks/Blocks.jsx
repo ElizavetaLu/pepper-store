@@ -1,11 +1,13 @@
-import React from "react";
 import SectionTitle from "../../section-title/SectionTitle";
 import "./blocks.scss"
 
 const Blocks = () => {
+    
     return (
         <div className="blocks-container">
-                <SectionTitle title={"Block"}/>
+
+            <SectionTitle title={"Block"} />
+
             <div className="blocks">
                 <div className="main-block" >
                     <div className="image">

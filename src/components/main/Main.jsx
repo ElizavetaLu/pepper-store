@@ -1,23 +1,19 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ConsiderSection from "../main-consider-section/ConsiderSection";
-import PopUp from "../popup/PopUp";
 import { openCloseChat } from "../../redux/actions/actions";
+import ConsiderSection from "../main-consider-section/ConsiderSection";
 import SectionTitle from "../section-title/SectionTitle";
 import Blocks from "./blocks/Blocks";
-import "./main.scss"
+import PopUp from "../popup/PopUp";
 import Chat from "../chat/Chat";
+import "./main.scss";
 
 const Main = () => {
 
-    const isActive = useSelector(state => state.popup)
-    const dispatch = useDispatch()
-
-
+    const isActive = useSelector(state => state.popup);
+    const dispatch = useDispatch();
 
     return (
         <div className="main" >
-
 
             <div className="introduction">
                 <img src="/pepper-store/build//images/chilli-seeds_1200x1200.webp" alt="" />
@@ -33,11 +29,8 @@ const Main = () => {
 
             <div className="main-content">
 
-
                 <ConsiderSection />
-
                 <Blocks />
-
 
                 <div className="how-to-container">
 
@@ -75,7 +68,6 @@ const Main = () => {
             </div>
 
             <Chat />
-
 
         </div>
     )

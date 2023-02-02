@@ -11,33 +11,27 @@
         margin: 0px 8px;
     }
 
-    .msg-text{
+    .msg-text {
         padding: 10px;
         border-radius: 20px;
     }
-
 }
-
-
-
-
 
 
 .msg.sent {
     flex-direction: row-reverse;
     margin-right: 10px;
-    
-    .msg-text{
+
+    .msg-text {
         background-color: rgb(233, 233, 233);
         border-bottom-right-radius: 0px;
     }
 }
 
-
-
 .msg.received {
     margin-left: 10px;
-    .msg-text{
+
+    .msg-text {
         background-color: #fff;
         border-bottom-left-radius: 0px;
     }

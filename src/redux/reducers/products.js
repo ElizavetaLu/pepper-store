@@ -22,26 +22,19 @@ const initialState = {
 
 const products = (state = initialState, { type, payload }) => {
     switch (type) {
-        case GET_MOST_POPULAR:
-            return { ...state, mostPopular: payload };
+        case GET_MOST_POPULAR: return { ...state, mostPopular: payload };
 
-        case GET_ON_SALE:
-            return { ...state, onSale: payload };
+        case GET_ON_SALE: return { ...state, onSale: payload };
 
-        case GET_NEW:
-            return { ...state, new: payload };
+        case GET_NEW: return { ...state, new: payload };
 
-        case GET_HOT:
-            return { ...state, hot: payload };
+        case GET_HOT: return { ...state, hot: payload };
 
-        case GET_PRODUCTS:
-            return { ...state, products: payload };
+        case GET_PRODUCTS: return { ...state, products: payload };
 
-        case GET_FAST_GROW:
-            return { ...state, fastGrow: payload };
+        case GET_FAST_GROW: return { ...state, fastGrow: payload };
 
-        default:
-            return state
+        default: return state;
     }
 }
 

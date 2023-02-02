@@ -1,10 +1,9 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { selectSection } from "../../redux/actions/actions"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Navigation } from "swiper";
 import Card from "../product-card/Card";
 import SectionTitle from "../section-title/SectionTitle";
-import { Grid, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { selectSection } from "../../redux/actions/actions"
 
 import "swiper/css";
 import "swiper/css/grid";
@@ -96,7 +95,6 @@ const ConsiderSection = () => {
 
                                         allData={item}
                                     /></SwiperSlide>))
-
                                 }
                             </div>
                     }

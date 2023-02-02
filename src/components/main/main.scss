@@ -6,11 +6,9 @@
     height: 100%;
     position: relative;
 
-
     .introduction {
         height: 400px;
         padding-top: $header_height;
-
         overflow: hidden;
         position: relative;
         @include flex_center;
@@ -68,9 +66,6 @@
         box-sizing: border-box;
         margin: 0px 40px;
 
-
-
-
         .how-to-container {
             @include flex_column_center;
 
@@ -94,7 +89,6 @@
                         border: 2px solid $main-boreder-color;
 
                         .title-text {
-
                             font-size: 27px;
                         }
 
@@ -108,7 +102,6 @@
                         .button {
                             position: absolute;
                             bottom: -20px;
-
 
                             .btn {
                                 white-space: nowrap;
@@ -185,5 +178,4 @@
             }
         }
     }
-
 }

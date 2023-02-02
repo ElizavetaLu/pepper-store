@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     incrementInCart,
@@ -7,20 +6,19 @@ import {
     onHandChangeInCart,
     setProductData,
     showPopup
-} from "../../redux/actions/actions"
-import "./cartItem.scss"
+} from "../../redux/actions/actions";
+import "./cartItem.scss";
 
 const CartItem = (props) => {
 
-    const cart = useSelector(state => state.cart)
-    const qty = cart.find(item => item.namerow === props.namerow).qty
+    const cart = useSelector(state => state.cart);
+    const qty = cart.find(item => item.namerow === props.namerow).qty;
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     return (
 
-        <div className="item-in-cart" onClick={e => {
-
+        <div className="item-in-cart" onClick={() => {
             dispatch(setProductData(props))
             dispatch(showPopup())
         }}>
@@ -37,9 +35,6 @@ const CartItem = (props) => {
                 <div className="row">
                     <div className="name">{props.namerow}</div>
                 </div>
-
-
-
 
                 <div className="row">
 
@@ -80,15 +75,11 @@ const CartItem = (props) => {
                     </div>
 
 
-
                     <div className="total">Total: {props.onSale ? Number((qty * props.salePrice).toFixed(2)) : Number((qty * props.price).toFixed(2))}$</div>
-
 
                 </div>
             </div>
-
         </div>
-
     )
 }
 

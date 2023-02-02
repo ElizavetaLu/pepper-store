@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import './popup.scss';
-import { showPopup, openCloseReviews, setHover, setRating } from "../../redux/actions/actions";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useAuthState } from 'react-firebase-hooks/auth';
-import firebase from 'firebase/compat/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { firestore, auth } from "../../firebase/firebase"
+import firebase from 'firebase/compat/app';
+import SingleReview from "./all-review-components/single-review/SingleReview";
+import { showPopup, openCloseReviews, setHover, setRating } from "../../redux/actions/actions";
 import ReviewForm from "./all-review-components/review-form/ReviewForm";
 import Cta from "./cta/Cta";
-import { firestore, auth } from "../../firebase/firebase"
-import SingleReview from "./all-review-components/single-review/SingleReview";
+import './popup.scss';
 
 
 const PopUp = ({ isActive }) => {
@@ -20,8 +20,8 @@ const PopUp = ({ isActive }) => {
 
     const [reviews] = useCollectionData(query);
 
-    const [formValue, setFormValue] = useState('')
-    const rating = useSelector(state => state.rating.rating)
+    const [formValue, setFormValue] = useState('');
+    const rating = useSelector(state => state.rating.rating);
 
     const sendReview = async (e) => {
         e.preventDefault()
@@ -39,22 +39,22 @@ const PopUp = ({ isActive }) => {
     }
 
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
-    const product = useSelector(state => state.setSelectedProductData)
-    const reviewsPanel = useSelector(state => state.reviews)
+    const product = useSelector(state => state.setSelectedProductData);
+    const reviewsPanel = useSelector(state => state.reviews);
 
 
-    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : []
+    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : [];
 
 
     return (
         <div className={isActive ? "modal active" : "modal"} onClick={() => {
-            dispatch(setHover(0))
-            dispatch(setRating(0))
-            setFormValue('')
-            if (reviewsPanel) dispatch(openCloseReviews())
-            dispatch(showPopup())
+            dispatch(setHover(0));
+            dispatch(setRating(0));
+            setFormValue('');
+            if (reviewsPanel) dispatch(openCloseReviews());
+            dispatch(showPopup());
         }}>
             {Object.keys(product).length === 0
                 ? null
@@ -93,16 +93,11 @@ const PopUp = ({ isActive }) => {
                         </div>
                     }
 
-
                     <div className="product-data-container">
-
-
 
                         <div className="product-photo">
                             <img src={`https:${product.image.fields.file.url}`} alt="" />
                         </div>
-
-
 
                         <div className="product-data">
                             <div className="product-categories">{product.categories.map(item => (<span key={item.sys.id}>{item.sys.id} | </span>))}</div>
@@ -124,9 +119,6 @@ const PopUp = ({ isActive }) => {
                                         <div className="text">reviews</div>
                                     </div>
                                 }
-
-
-
                             </div>
 
                             <div className="description"> <span className="tittle">Description:</span> {product.description} </div>
@@ -153,8 +145,7 @@ const PopUp = ({ isActive }) => {
                                         auth={auth}
                                         time={review.createdAt ? new Date(review.createdAt.seconds * 1000).toString() : '--:--'}
                                     />)
-                                })
-                                }
+                                })}
 
                             </div>
                         </div>

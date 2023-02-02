@@ -28,7 +28,6 @@
                     display: flex;
                     align-items: center;
 
-
                     .vector {
                         margin-left: 6px;
                         @include flex_center;
@@ -62,7 +61,6 @@
                         display: flex;
                         align-items: center;
 
-
                         .vector {
                             margin-left: 5px;
                             @include flex_center;
@@ -73,7 +71,6 @@
                         }
                     }
                 }
-
             }
         }
 
