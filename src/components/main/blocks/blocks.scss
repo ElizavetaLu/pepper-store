@@ -3,6 +3,7 @@
 
 .blocks-container {
     @include flex_column_center;
+    margin-top: 120px;
 
     .blocks {
         margin-top: 20px;

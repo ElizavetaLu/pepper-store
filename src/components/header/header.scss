@@ -91,8 +91,8 @@
                     transform: rotate(45deg);
                     color: #000;
                 }
-                
-                .side-button-2:hover{
+
+                .side-button-2:hover {
                     color: #fff;
                 }
 
@@ -126,6 +126,7 @@
                     .button {
                         margin-top: 15px;
                         cursor: pointer;
+
                         .btn {
                             @include main_btn;
                             font-size: 17px;
@@ -136,20 +137,22 @@
             }
 
             .profile {
-                margin-right: 16px;
+                margin: 0px 40px 0px 10px;
+                @include flex_center;
 
                 img {
-                    margin-left: 4px;
-                    width: 19px;
+                    width: 26px;
                     padding-bottom: 4px;
                 }
             }
 
             .cart {
+                margin-left: 6px;
+                display: flex;
+
                 img {
-                    margin-left: 6px;
-                    width: 25px;
-                    padding-bottom: 3px;
+                    width: 30px;
+                    padding-bottom: 4px;
                 }
             }
         }
@@ -215,5 +218,3 @@
 #side-checkbox:checked+.side-panel {
     right: -1px;
 }
-
-

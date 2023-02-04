@@ -67,6 +67,7 @@
         margin: 0px 40px;
 
         .how-to-container {
+            margin-top: 20px;
             @include flex_column_center;
 
             .how-to-grow-peppers {
