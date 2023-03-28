@@ -1,22 +1,19 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { 
     addToCart,
     showPopup, 
     setProductData } from "../../redux/actions/actions";
-import "./card.scss"
+import "./card.scss";
 
 const Card = ({ name, newP, onSale, rate, image, price, salePrice, allData }) => {
 
     const weigthQty = useSelector(state=> state.changeQuantityOnCard)
-
-
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     return (
         <div className="product-card" onClick={() => {
-            dispatch(setProductData(allData))
-            dispatch(showPopup())
+            dispatch(setProductData(allData));
+            dispatch(showPopup());
         }}>
             <div className="product-photo">
 

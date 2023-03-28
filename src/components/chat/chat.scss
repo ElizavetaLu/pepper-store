@@ -16,7 +16,6 @@
     transition: 0.5s;
     z-index: 100;
 
-
     .chat-content {
         box-sizing: border-box;
         @include panels_color;
@@ -107,7 +106,6 @@
                     flex-direction: column;
                     justify-content: center;
 
-
                     .row.price {
                         margin-top: 8px;
                         display: flex;
@@ -152,7 +150,6 @@
             display: flex;
             align-items: center;
             width: 100%;
-
 
             .msg-input {
                 box-sizing: border-box;

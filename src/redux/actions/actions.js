@@ -42,32 +42,30 @@ export const showSuccess = () => ({ type: SHOW_SUCCESS })
 
 
 
-
-
-export const getProducts = (products) => ({
+export const getProducts = products => ({
     type: GET_PRODUCTS,
     payload: products,
 })
 
-export const getHot = (products) => ({
+export const getHot = products => ({
     type: GET_HOT,
     payload: products,
 })
 
-export const getMostPopular = (products) => ({
+export const getMostPopular = products => ({
     type: GET_MOST_POPULAR,
     payload: products,
 })
-export const getOnSale = (products) => ({
+export const getOnSale = products => ({
     type: GET_ON_SALE,
     payload: products,
 })
 
-export const getNew = (products) => ({
+export const getNew = products => ({
     type: GET_NEW,
     payload: products,
 })
-export const getFastGrow = (products) => ({
+export const getFastGrow = products => ({
     type: GET_FAST_GROW,
     payload: products,
 })
@@ -76,16 +74,13 @@ export const getFastGrow = (products) => ({
 export const showPopup = () => ({ type: SHOW_POPUP })
 export const setProductData = productData => ({
     type: SET_PRODUCT_DATA,
-    payload: { ...productData }
+    payload: productData
 })
-
 
 export const openCloseChat = () => ({ type: OPEN_CLOSE_CHAT })
 export const openCloseReviews = () => ({ type: SHOW_REVIEWS })
 
-
 export const selectSection = name => ({ type: SELECT_SECTION, name })
-
 
 export const setRating = value => ({ type: SET_RATING, value })
 export const setHover = value => ({ type: SET_HOVER, value })

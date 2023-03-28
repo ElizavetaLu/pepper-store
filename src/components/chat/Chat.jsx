@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "./chat.scss"
 import { openCloseChat } from "../../redux/actions/actions"
 import { useAuthState } from 'react-firebase-hooks/auth';
-import firebase from 'firebase/compat/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import ChatMessage from "./chat-message/ChatMessage";
 import { firestore, auth } from "../../firebase/firebase"
+import firebase from 'firebase/compat/app';
+import ChatMessage from "./chat-message/ChatMessage";
+import "./chat.scss"
 
 
 function useChatScroll(dep) {

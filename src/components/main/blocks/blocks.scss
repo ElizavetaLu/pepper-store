@@ -3,6 +3,7 @@
 
 .blocks-container {
     @include flex_column_center;
+    margin-top: 120px;
 
     .blocks {
         margin-top: 20px;
@@ -34,7 +35,6 @@
                 img:hover {
                     transform: scale(1.09);
                 }
-
             }
 
             .tittle {

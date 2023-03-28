@@ -1,4 +1,3 @@
-import React from "react";
 import "./categoryBlock.scss"
 
 const CategoryBlock = ({ name, description, image }) => {

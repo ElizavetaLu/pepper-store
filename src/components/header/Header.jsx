@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { cleanUpCart } from "../../redux/actions/actions";
 import CartItem from "../cart-item/CartItem";
-import "./header.scss"
 import HeaderLink from "./link/HeaderLink";
-import { cleanUpCart } from "../../redux/actions/actions"
+import "./header.scss";
 
 const defaultOffset = 200;
 let lastScroll = 0;
@@ -82,9 +82,7 @@ const Header = () => {
                             : <div className="side-title">Products amount: {cartItems.length}</div>
                         }
 
-
                         <div className="cart-items">
-
                             {cartItems &&
                                 cartItems.map(item => (<CartItem
                                     key={item.namerow}

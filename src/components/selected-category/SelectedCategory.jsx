@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { openCloseChat } from "../../redux/actions/actions";
 import PopUp from "../popup/PopUp";
 import Card from "../product-card/Card";
 import Chat from "../chat/Chat";
-import "./selectedCategory.scss"
 import CategoryBlock from "./top-row/CategoryBlock";
+import "./selectedCategory.scss";
 
 const categoriesBlockContent = [
     {
@@ -32,27 +32,23 @@ const categoriesBlockContent = [
         image: 'serrano-peppers-g0aef408a5_1920.jpg',
         name: 'Green Chile Peppers',
         description: "These chiles are great in green chile stews, chile rellenos, salsas, hot sauces, and so much more. Looking for Hatch Green Chile seeds? You've come to the right place. Chile peppers are EASY to grow from seed!"
-    },
-
-
+    }
 ]
 
 const SelectedCategory = () => {
 
-    const { name } = useParams()
-    const category = name.toLocaleLowerCase().slice(0, 5)
+    const { name } = useParams();
+    const category = name.toLocaleLowerCase().slice(0, 5);
 
-    const hot = useSelector(state => state.products.hot)
-    const products = useSelector(state => state.products.products)
+    const hot = useSelector(state => state.products.hot);
+    const products = useSelector(state => state.products.products);
 
+    const categProducts = products.filter(product => product.categories.find(tag => tag.sys.id.startsWith(category)));
 
-    const categProducts = products.filter(product => product.categories.find(tag => tag.sys.id.startsWith(category)))
+    const isActive = useSelector(state => state.popup);
+    const dispatch = useDispatch();
 
-
-    const isActive = useSelector(state => state.popup)
-    const dispatch = useDispatch()
-
-    const [saleProducts, setSaleProducts] = useState(false)
+    const [saleProducts, setSaleProducts] = useState(false);
 
 
     return (

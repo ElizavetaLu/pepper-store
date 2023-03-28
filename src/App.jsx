@@ -10,10 +10,10 @@ import { sortData } from './sortData'
 
 
 
-function App() {
+const App = () => {
 
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
   useEffect(() => {
     sortData(dispatch)
   })

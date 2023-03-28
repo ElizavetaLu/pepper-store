@@ -46,19 +46,14 @@ const cart = (state = initialState, { type, allData, value, name }) => {
             const item = state.find(elem => elem.namerow === name);
 
             item.qty = Number(value)
-            return [...state]
-        }
-
-        case REMOVE_FROM_CART: {
-            return [...state.filter(elem => elem.namerow !== name)]
-        }
-
-        case CLEAN_UP_CART: {
-            state = []
             return state
         }
 
-        default: return state
+        case REMOVE_FROM_CART: return state.filter(elem => elem.namerow !== name)
+
+        case CLEAN_UP_CART: return [];
+
+        default: return state;
     }
 }
 
