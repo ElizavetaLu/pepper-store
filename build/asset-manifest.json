@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/pepper-store/build/static/css/main.5f3c6165.css",
-    "main.js": "/pepper-store/build/static/js/main.dd926aae.js",
-    "static/js/787.61ec710e.chunk.js": "/pepper-store/build/static/js/787.61ec710e.chunk.js",
+    "main.css": "/pepper-store/build/static/css/main.6039c3d2.css",
+    "main.js": "/pepper-store/build/static/js/main.517a698d.js",
     "index.html": "/pepper-store/build/index.html",
-    "main.5f3c6165.css.map": "/pepper-store/build/static/css/main.5f3c6165.css.map",
-    "main.dd926aae.js.map": "/pepper-store/build/static/js/main.dd926aae.js.map",
-    "787.61ec710e.chunk.js.map": "/pepper-store/build/static/js/787.61ec710e.chunk.js.map"
+    "main.6039c3d2.css.map": "/pepper-store/build/static/css/main.6039c3d2.css.map",
+    "main.517a698d.js.map": "/pepper-store/build/static/js/main.517a698d.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f3c6165.css",
-    "static/js/main.dd926aae.js"
+    "static/css/main.6039c3d2.css",
+    "static/js/main.517a698d.js"
   ]
 }
