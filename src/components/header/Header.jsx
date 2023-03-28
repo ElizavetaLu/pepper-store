@@ -68,7 +68,7 @@ const Header = () => {
                 <div className="header-item">
                     <div className="name">Profile</div>
                     <div className="profile">
-                        <img src="/pepper-store/build//images/icons/user.png" alt="Profile" />
+                        <img src="/pepper-store/build//images/icons/profile.png" alt="Profile" />
                     </div>
                 </div>
 
@@ -105,14 +105,14 @@ const Header = () => {
                             <div className="side-b side-open">
                                 <div className="name">Cart</div>
                                 <div className="cart">
-                                    <img src="/pepper-store/build//images/icons/cart.png" alt="Cart" />
+                                    <img src="/pepper-store/build//images/icons/cart-icon.png" alt="Cart" />
                                 </div>
                             </div>
 
                             <div className="side-b side-close">
                                 <div className="name">Cart</div>
                                 <div className="cart">
-                                    <img src="/pepper-store/build//images/icons/cart.png" alt="Cart" />
+                                    <img src="/pepper-store/build//images/icons/cart-icon.png" alt="Cart" />
                                 </div>
                             </div>
                         </label>
