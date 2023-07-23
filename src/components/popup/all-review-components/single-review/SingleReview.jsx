@@ -9,7 +9,7 @@ const SingleReview = ({ review, time, rating }) => {
                 <div className="customer-info">
                     <div className="customer">
                         <div className="customer-avatar">
-                            <img src="/pepper-store/build//images/icons/profile-user.png" alt="" />
+                            <img src="/images/icons/profile-user.png" alt="" />
                         </div>
                         <div className="customer-name">
                             <div className="text">Customer Name</div>
@@ -17,9 +17,9 @@ const SingleReview = ({ review, time, rating }) => {
                         </div>
                     </div>
                     {rating && <div className="customer-rate">
-                        <div className="number">{rating}</div>
+                        {/* <div className="number">{rating}</div> */}
                         <div className="star">
-                            <img src="/pepper-store/build//images/icons/star.png" alt="" />
+                            <img src="/images/icons/star.png" alt="" />
                         </div>
                     </div>}
                 </div>

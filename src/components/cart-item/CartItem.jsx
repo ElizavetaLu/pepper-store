@@ -23,7 +23,7 @@ const CartItem = (props) => {
             dispatch(showPopup())
         }}>
             <div className="image">
-                <img src={`https:${props.image.fields.file.url}`} alt="" />
+                {/* <img src={`https:${props.image.fields.file.url}`} alt="" /> */}
             </div>
 
             <div className="delete" onClick={e => {
@@ -54,7 +54,7 @@ const CartItem = (props) => {
                             e.stopPropagation()
                             dispatch(decrementInCart(props.namerow))
                         }}>
-                            <img src="/pepper-store/build//images/icons/minus.png" alt="" />
+                            <img src="/images/icons/minus.png" alt="" />
                         </div>
                         <input
                             type="number"
@@ -70,7 +70,7 @@ const CartItem = (props) => {
                             e.stopPropagation()
                             dispatch(incrementInCart(props.namerow))
                         }}>
-                            <img src="/pepper-store/build//images/icons/plus.png" alt="" />
+                            <img src="/images/icons/plus.png" alt="" />
                         </div>
                     </div>
 

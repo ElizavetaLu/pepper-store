@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { openCloseChat } from "../../redux/actions/actions";
 import ConsiderSection from "../main-consider-section/ConsiderSection";
 import SectionTitle from "../section-title/SectionTitle";
+import Button from "../button/Button";
 import Blocks from "./blocks/Blocks";
 import PopUp from "../popup/PopUp";
 import Chat from "../chat/Chat";
 import "./main.scss";
+
 
 const Main = () => {
 
@@ -16,13 +18,16 @@ const Main = () => {
         <div className="main" >
 
             <div className="introduction">
-                <img src="/pepper-store/build//images/chilli-seeds_1200x1200.webp" alt="" />
+                <img src="/images/chilli-seeds_1200x1200.webp" alt="" />
 
                 <div className="introduction-text">
                     <div className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laborum earum pariatur expedita porro nisi est obcaecati veritatis natus molestias! Numquam deserunt modi aut animi nulla eius, laborum eum...</div>
-                    <div className="button">
-                        <button className="btn">read more</button>
-                    </div>
+
+                    <Button
+                        action={() => { }}
+                        text="read more"
+                        uppercase
+                    />
                 </div>
             </div>
 
@@ -46,7 +51,7 @@ const Main = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="block" style={{ backgroundImage: 'url("/pepper-store/build//images/chili-g7ea6ab88a_1920.jpg")' }}>
+                        <div className="block" style={{ backgroundImage: 'url("/images/chili-g7ea6ab88a_1920.jpg")' }}>
                             <div className="title">
                                 <div className="lowerCase">How</div>
                                 <div className="">to grow</div>
@@ -63,7 +68,7 @@ const Main = () => {
             <div className="chat-icon-container">
                 <div></div>
                 <div className="chat-icon" onClick={() => dispatch(openCloseChat())}>
-                    <img src="/pepper-store/build//images/icons/chat.png" alt="" />
+                    <img src="/images/icons/chat.png" alt="" />
                 </div>
             </div>
 

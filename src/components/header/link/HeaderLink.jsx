@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import "./link.scss"
+import "./headerLink.scss"
 
 const HeaderLink = ({ name }) => {
     return (
-        <Link to={`/pepper-store/build/category/${name}`} className="link" state={name}>
-            <div className="category-item">{name}</div>
+        <Link to={`category/${name}`} className="category-item-link" state={name}>
+            <span className="category-item">{name}</span>
         </Link>
     )
 }

@@ -28,7 +28,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-sizing: border-box;
+             
             width: 400px;
             height: 200px;
             padding: 20px;
@@ -63,7 +63,7 @@
     }
 
     .main-content {
-        box-sizing: border-box;
+         
         margin: 0px 40px;
 
         .how-to-container {
@@ -74,16 +74,16 @@
                 margin-top: 20px;
                 display: flex;
                 justify-content: center;
-                box-sizing: border-box;
+                 
 
                 .info-container {
-                    box-sizing: border-box;
+                     
                     width: 510px;
                     display: flex;
                     align-items: center;
 
                     .info-content {
-                        box-sizing: border-box;
+                         
                         position: relative;
                         padding: 20px;
                         @include flex_column_center;
@@ -124,7 +124,7 @@
 
                 .block {
                     margin-bottom: $section_end;
-                    box-sizing: border-box;
+                     
                     background-size: cover;
                     width: 686.25px;
                     height: 600px;

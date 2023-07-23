@@ -1,158 +1,129 @@
 @import "../../variables";
 
 .header {
-    z-index: 100;
-    box-sizing: border-box;
     padding: 10px 40px;
+    z-index: 100;
     height: $header_height;
-    @include panels_color;
-    @include justify_between;
-    align-items: center;
     position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: 0 auto;
+    width: 100%;
     transition: transform .2s linear;
-
-    .logo {
-        img {
-            width: 42px;
-        }
-    }
-
-    .categories {
-        width: 50%;
-        display: flex;
-
-        .category-item:hover {
-            color: #fff;
-            border-bottom: 1.5px solid #000;
-        }
-    }
-
-    .comp-info {
-        width: 13%;
-        display: flex;
-        margin: 0px 20px;
-
-
-        .more-info {
-            white-space: nowrap;
-            margin-right: 12px;
-            cursor: pointer;
-            padding: 0px 3px 3px;
-            border-bottom: 1px solid transparent;
-        }
-
-        .more-info:hover {
-            color: #fff;
-            border-bottom: 1.5px solid #000;
-        }
-    }
-
-    .header-items {
-        width: 12%;
-        display: flex;
+    @include panels_color;
+    display: flex;
+    align-items: center;
+    color: $main-light-color;
+    
+    .header-container {
+        @include container;
+        width: 100%;
+        @include justify_between;
         align-items: center;
 
+        .logo-link {
+            .logo {
+                width: 45px;
+            }
+        }
 
-        .header-item {
+        .categories {
+            width: 50%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .comp-info {
+            width: 13%;
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-items {
             display: flex;
             align-items: center;
-            cursor: default;
+            gap: 20px;
 
-
-            #side-checkbox {
-                display: none;
+            .profile-icon {
+                width: 26px;
+                cursor: pointer;
             }
 
-            .side-panel {
-                position: fixed;
-                z-index: 999999;
-                top: 63.5px;
-                right: -363px;
-                background-color: rgba(0, 0, 0, 0.32);
-                backdrop-filter: blur(40px);
-                transition: all 0.5s;
-                width: 320px;
-                padding: 40px 20px;
-                box-shadow: 0px 10px 15px 5px #0000002b;
-                color: #fff;
+            .header-item {
 
-                .side-button-2 {
-                    font-size: 30px;
-                    border-radius: 20px;
-                    position: absolute;
-                    z-index: 1;
-                    top: 0px;
-                    left: 8px;
-                    cursor: default;
-                    transform: rotate(45deg);
-                    color: #000;
+                #side-checkbox {
+                    display: none;
                 }
 
-                .side-button-2:hover {
+                .side-panel {
+                    position: fixed;
+                    z-index: 999999;
+                    top: 63.5px;
+                    right: -363px;
+                    background-color: rgba(0, 0, 0, 0.32);
+                    backdrop-filter: blur(40px);
+                    transition: all 0.5s;
+                    width: 320px;
+                    padding: 40px 20px;
+                    box-shadow: 0px 10px 15px 5px #0000002b;
                     color: #fff;
-                }
 
-                .cart-items {
-                    color: #000;
-                    height: 77%;
-                    overflow: hidden;
-                    overflow-y: scroll;
-                }
-
-                .side-title {
-                    font-size: 18px;
-                    padding-bottom: 6px;
-                    margin-bottom: 20px;
-                    border-bottom: 2px solid #4a4a4a;
-                }
-
-                .total-cost {
-                    position: relative;
-                    bottom: 50px;
-                    display: flex;
-                    flex-direction: column;
-                    padding-top: 15px;
-                    margin-top: 20px;
-                    border-top: 2px solid #4a4a4a;
-
-                    .total {
-                        font-size: 18px;
+                    .side-button-2 {
+                        font-size: 30px;
+                        border-radius: 20px;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0px;
+                        left: 8px;
+                        cursor: default;
+                        transform: rotate(45deg);
+                        color: #000;
                     }
 
-                    .button {
-                        margin-top: 15px;
-                        cursor: pointer;
+                    .side-button-2:hover {
+                        color: #fff;
+                    }
 
-                        .btn {
-                            @include main_btn;
-                            font-size: 17px;
+                    .cart-items {
+                        color: #000;
+                        height: 77%;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                    }
+
+                    .side-title {
+                        font-size: 18px;
+                        padding-bottom: 6px;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid #4a4a4a;
+                    }
+
+                    .total-cost {
+                        position: relative;
+                        bottom: 50px;
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 15px;
+                        margin-top: 20px;
+                        border-top: 2px solid #4a4a4a;
+
+                        .total {
+                            font-size: 18px;
+                        }
+
+                        .button {
+                            margin-top: 15px;
+                            cursor: pointer;
+
+                            .btn {
+                                @include main_btn;
+                                font-size: 17px;
+                            }
                         }
                     }
                 }
 
-            }
-
-            .profile {
-                margin: 0px 40px 0px 10px;
-                @include flex_center;
-
-                img {
-                    width: 26px;
-                    padding-bottom: 4px;
-                }
-            }
-
-            .cart {
-                margin-left: 6px;
-                display: flex;
-
-                img {
-                    width: 30px;
-                    padding-bottom: 4px;
+                .cart {
+                    width: 25px;
+                    padding-top: 2px;
+                    cursor: pointer;
                 }
             }
         }
@@ -164,45 +135,6 @@
 }
 
 
-
-
-
-
-.side-button-1 .side-b {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-}
-
-.side-button-1 .side-b:hover,
-.side-button-1 .side-b:active,
-.side-button-1 .side-b:focus {
-    color: #FFF;
-}
-
-.side-button-1 .side-b:after,
-.side-button-1 .side-b:before {
-    position: absolute;
-    height: 4px;
-    right: 50%;
-    bottom: -6px;
-    content: "";
-    transition: all 280ms ease-in-out;
-    width: 0;
-}
-
-.side-button-1 .side-b:before {
-    top: -6px;
-}
-
-.side-button-1 .side-b:hover:after,
-.side-button-1 .side-b:hover:before {
-    width: 100%;
-    right: -1px;
-}
-
 .side-button-1 .side-close {
     display: none;
 }
@@ -213,6 +145,7 @@
 
 #side-checkbox:checked+.side-panel+.side-button-1-wr .side-button-1 .side-close {
     display: flex;
+    padding-bottom: 4px;
 }
 
 #side-checkbox:checked+.side-panel {

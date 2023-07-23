@@ -70,7 +70,7 @@ const Chat = () => {
             <div className="chat-content" onClick={e => e.stopPropagation()}>
                 <div className="chat-header">
                     <div className="logo">
-                        <img src="/pepper-store/build//images/icons/bell-pepper.png" alt="" />
+                        <img src="/images/icons/bell-pepper.png" alt="" />
                     </div>
                     <div className="info">
                         <div className="name">Name</div>
