@@ -1,7 +1,6 @@
 @import "../../../../variables";
 
 .leave-review {
-    border-top: 1.7px solid $main-boreder-color;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -20,8 +19,6 @@
         cursor: pointer;
     }
 
-
-
     .review-form {
         width: 100%;
 
@@ -29,6 +26,7 @@
             width: 83%;
             margin-right: 10px;
             outline: none;
+            background-color: transparent;
             border: none;
             border-bottom: 1px solid rgb(195, 195, 195);
             font-size: 16px;
@@ -38,7 +36,8 @@
         .btn {
             @include main_btn;
             font-size: 16px;
-            padding: 5px 10px;;
+            padding: 5px 10px;
+            ;
         }
 
         .btn:disabled {

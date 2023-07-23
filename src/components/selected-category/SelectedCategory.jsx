@@ -90,7 +90,7 @@ const SelectedCategory = () => {
                             <div className="filter">
                                 <div className="name">Price</div>
                                 <div className="vector">
-                                    <img src="/pepper-store/build//images/icons/arrDown.png" alt="" />
+                                    <img src="/images/icons/arrDown.png" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ const SelectedCategory = () => {
                         <div className="filter">
                             <div className="name">Featured</div>
                             <div className="vector">
-                                <img src="/pepper-store/build//images/icons/arrDown.png" alt="" />
+                                <img src="/images/icons/arrDown.png" alt="" />
                             </div>
                         </div>
 
@@ -172,7 +172,7 @@ const SelectedCategory = () => {
             <div className="chat-icon-container">
                 <div></div>
                 <div className="chat-icon" onClick={() => dispatch(openCloseChat())}>
-                    <img src="/pepper-store/build//images/icons/chat.png" alt="" />
+                    <img src="/images/icons/chat.png" alt="" />
                 </div>
             </div>
 

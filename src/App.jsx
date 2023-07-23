@@ -25,8 +25,8 @@ const App = () => {
         <Header />
 
         <Routes>
-          <Route path='/pepper-store/build/' element={<Main />} />
-          <Route path='/pepper-store/build/category/:name' element={<SelectedCategory />} />
+          <Route path='/' element={<Main />} />
+          <Route path='category/:name' element={<SelectedCategory />} />
         </Routes>
 
         <Footer />

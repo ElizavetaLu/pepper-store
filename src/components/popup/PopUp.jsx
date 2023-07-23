@@ -1,61 +1,50 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { firestore, auth } from "../../firebase/firebase"
-import firebase from 'firebase/compat/app';
-import SingleReview from "./all-review-components/single-review/SingleReview";
-import { showPopup, openCloseReviews, setHover, setRating } from "../../redux/actions/actions";
-import ReviewForm from "./all-review-components/review-form/ReviewForm";
-import Cta from "./cta/Cta";
+import { showPopup, openCloseReviews, setHover, setRating, addToCart } from "../../redux/actions/actions";
+import ReviewSection from "./all-review-components/review-section/ReviewSection";
+import Details from "./details/Details";
 import './popup.scss';
 
 
+const sections = ['description', 'details', 'reviews']
+
 const PopUp = ({ isActive }) => {
 
-    const [user] = useAuthState(auth);
-    const reviewsRef = firestore.collection('reviews');
-    const query = reviewsRef.orderBy('createdAt');
 
-
-    const [reviews] = useCollectionData(query);
-
-    const [formValue, setFormValue] = useState('');
-    const rating = useSelector(state => state.rating.rating);
-
-    const sendReview = async (e) => {
-        e.preventDefault()
-        const { uid } = auth.currentUser;
-
-        await reviewsRef.add({
-            product: product.namerow,
-            text: formValue,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            uid,
-            rating
-        })
-
+    const closeModal = () => {
+        dispatch(setHover(0));
+        dispatch(setRating(0));
         setFormValue('');
+        if (reviewsPanel) dispatch(openCloseReviews());
+        dispatch(showPopup());
     }
+
+    const onAddToCart = () => {
+        if (!value) return;
+        dispatch(addToCart(product, value));
+        setValue(1);
+        closeModal();
+    }
+
+    const [activeSection, setActiveSection] = useState('description');
+    const [value, setValue] = useState(1)
+
+
+    //review form
+    const [formValue, setFormValue] = useState('');
 
 
     const dispatch = useDispatch();
 
     const product = useSelector(state => state.setSelectedProductData);
+
     const reviewsPanel = useSelector(state => state.reviews);
 
-
-    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : [];
+    const currentPrice = product.onSale ? product.salePrice : product.price;
 
 
     return (
-        <div className={isActive ? "modal active" : "modal"} onClick={() => {
-            dispatch(setHover(0));
-            dispatch(setRating(0));
-            setFormValue('');
-            if (reviewsPanel) dispatch(openCloseReviews());
-            dispatch(showPopup());
-        }}>
+        <div className={isActive ? "modal active" : "modal"} onClick={closeModal}>
             {Object.keys(product).length === 0
                 ? null
                 :
@@ -63,93 +52,109 @@ const PopUp = ({ isActive }) => {
                     if (reviewsPanel) dispatch(openCloseReviews())
                     e.stopPropagation()
                 }}>
-                    <div className="close" style={product.onSale
-                        ? { right: "2px", top: "15px" }
-                        : { right: "0", top: "-11px" }
-                    }
-                        onClick={() => {
-                            dispatch(setHover(0))
-                            dispatch(setRating(0))
-                            setFormValue('')
-                            dispatch(showPopup())
-                        }
-                        }>+</div>
 
-                    {product.new &&
-                        <div className="status-icon-new">
-                            <div className="status-container-new">
-                                <div className="text-new">new</div>
-                                <div className="triangle-new"></div>
-                            </div>
-                        </div>
-                    }
+                    <div className="background"></div>
 
-                    {product.onSale &&
-                        <div className="status-icon-sale">
-                            <div className="status-container-sale">
-                                <div className="triangle-sale"></div>
-                                <div className="text-sale">sale</div>
-                            </div>
-                        </div>
-                    }
+                    <button className="close-button" onClick={closeModal}>
+                        <img className="close-icon" src="/images/icons/white-plus.png" alt="" />
+                    </button>
 
-                    <div className="product-data-container">
+                    <div className="photo-container">
+                        <img
+                            className="product-photo"
+                            src={`https:${product.image.fields.file.url}`}
+                            alt=""
+                        />
+                    </div>
 
-                        <div className="product-photo">
-                            <img src={`https:${product.image.fields.file.url}`} alt="" />
-                        </div>
+                    <div className="data">
+                        <div className="main-information">
+                            <div className="name">{product.namerow}</div>
 
-                        <div className="product-data">
-                            <div className="product-categories">{product.categories.map(item => (<span key={item.sys.id}>{item.sys.id} | </span>))}</div>
+                            <div className="main-cta">
 
-                            <div className="product-name">{product.namerow}</div>
-
-                            <div className="rate-reviews">
-                                <div className="rate">
-                                    <div className="number">{product.rate}</div>
-                                    <div className="star">
-                                        <img src="/pepper-store/build//images/icons/star.png" alt="" />
+                                <div className="cta-block">
+                                    <p className="title">Price</p>
+                                    <div className="cta-block-data">
+                                        <div className="price">
+                                            {
+                                                product.onSale
+                                                    ? <div className="sale-price">
+                                                        <div className="current">${product.salePrice}</div>
+                                                        <div className="previous">${product.price}</div>
+                                                    </div>
+                                                    : <div className="current-price">${product.price}</div>
+                                            }
+                                            <div className="weight">/ 1kg</div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                {
-                                    currentProductReview &&
-                                    <div className="reviews">
-                                        <div className="amount">{currentProductReview.length}</div>
-                                        <div className="text">reviews</div>
+                                <div className="cta-block">
+                                    <p className="title">Quantity</p>
+                                    <div className="cta-block-data qty">
+                                        <button className="item" onClick={e => {
+                                            if (!value) return
+                                            setValue(prev => Number((prev - 0.1).toFixed(2)))
+                                        }}>
+                                            <img className="item-icon" src="/images/icons/white-minus.png" alt="" />
+                                        </button>
+
+                                        <input
+                                            type="number"
+                                            className="qty-input"
+                                            max={3}
+                                            value={value}
+                                            onChange={e => setValue(e.target.value)}
+                                        />
+
+                                        <button className="item" onClick={() => setValue(prev => Number((prev + 0.1).toFixed(2)))}>
+                                            <img className="item-icon" src="/images/icons/white-plus.png" alt="" />
+                                        </button>
                                     </div>
+                                </div>
+                            </div>
+
+                            <div className="nav-buttons">
+                                {
+                                    sections.map(section => {
+                                        return (
+                                            <button
+                                                key={section}
+                                                className={`nav-button ${section === activeSection && 'active'}`}
+                                                onClick={() => setActiveSection(section)}>{section}</button>
+                                        )
+                                    })
                                 }
+
                             </div>
 
-                            <div className="description"> <span className="tittle">Description:</span> {product.description} </div>
-                            <div className="data-row"><span className="title">HeatLevel:</span>{product.heatLevel} </div>
-                            <div className="data-row"><span className="title">Scoville:</span> {product.scoville} </div>
-                            <Cta />
+                            {
+                                activeSection === 'description'
+                                    ? <p className="description">{product.description}</p>
 
-                            <ReviewForm formValue={formValue} setFormValue={setFormValue} sendReview={sendReview} />
+                                    : activeSection === 'details'
+                                        ? <Details />
+
+                                        : activeSection === 'reviews'
+                                            ? <ReviewSection
+                                                value={formValue}
+                                                setValue={setFormValue}
+                                                product={product.namerow}
+                                            />
+                                            : null
+                            }
                         </div>
 
+                        <div className="total">
+                            <div className="count-total">
+                                <span className="title">Total:</span>
+                                <span className="amount">{(value * currentPrice).toFixed(2)} $</span>
+                            </div>
+
+                            <button className="add-button" onClick={onAddToCart}  >Add to Cart</button>
+                        </div>
                     </div>
-
-                    {currentProductReview &&
-                        <div className="reviews-panel">
-                            <div className="panel-name">Reviews: </div>
-
-                            {currentProductReview.length === 0 ? <span className="dumb">There's no reviews yet...</span> : null}
-                            <div className="all-reviews">
-                                {currentProductReview.map((review, indx) => {
-                                    return (<SingleReview
-                                        key={indx}
-                                        review={review.text}
-                                        rating={review.rating}
-                                        auth={auth}
-                                        time={review.createdAt ? new Date(review.createdAt.seconds * 1000).toString() : '--:--'}
-                                    />)
-                                })}
-
-                            </div>
-                        </div>
-                    }
                 </div>
             }
         </div>

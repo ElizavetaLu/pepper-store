@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .chat {
-    box-sizing: border-box;
+     
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -17,7 +17,7 @@
     z-index: 100;
 
     .chat-content {
-        box-sizing: border-box;
+         
         @include panels_color;
         width: 380px;
         height: 500px;
@@ -68,7 +68,7 @@
         }
 
         .prevProduct {
-            box-sizing: border-box;
+             
             padding: 4px 10px;
             height: 80px;
             display: flex;
@@ -87,7 +87,7 @@
                 display: flex;
 
                 .prev-product-img {
-                    box-sizing: border-box;
+                     
                     margin-right: 6px;
                     height: 73px;
                     width: 73px;
@@ -142,7 +142,7 @@
 
         .chat-footer {
             background-color: rgb(247, 247, 247);
-            box-sizing: border-box;
+             
             height: 60px;
             border-top: 1.1px solid rgb(231, 231, 231);
             border-bottom-left-radius: 14px;
@@ -152,7 +152,7 @@
             width: 100%;
 
             .msg-input {
-                box-sizing: border-box;
+                 
                 padding-left: 15px;
                 width: 100%;
                 outline: none;

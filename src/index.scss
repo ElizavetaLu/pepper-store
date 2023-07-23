@@ -2,8 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Ubuntu', sans-serif;
-  box-sizing: border-box;
   color: rgb(30 30 30 / 95%);
 }
 
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+}

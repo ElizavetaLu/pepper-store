@@ -1,0 +1,25 @@
+.button {
+    cursor: pointer;
+    background-color: #000;
+    border: none;
+    transition: all .2s ease-out;
+    padding: 10px 20px;
+    font-size: 15px;
+
+    .button-text{
+        color: #fff;
+        text-transform: capitalize;
+    }
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button:active {
+    transform: scale(1);
+}
+
+.button.uppercase {
+    text-transform: uppercase;
+}

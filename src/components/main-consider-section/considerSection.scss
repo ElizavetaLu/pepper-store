@@ -4,8 +4,7 @@
     margin-bottom: $section_end;
     @include flex_column_center;
     position: relative;
-    max-width: 1600px;
-    margin: 0px auto;
+    @include container;
     
     .navigation {
         width: 103%;
