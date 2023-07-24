@@ -7,19 +7,7 @@ $main-light-color: #334829;
 $light-background: #d6e4c3;
 
 @mixin panels_color {
-    background: #bcd695;
-    // background: #BCC572;
-    // background: linear-gradient(to bottom, #BCC572 0%, #a9c572 100%);
-    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #BCC572), color-stop(100%, #a9c572));
-    // background: -webkit-linear-gradient(top, #BCC572 0%, #a9c572 100%);
-    // background: -moz-linear-gradient(top, #BCC572 0%, #a9c572 100%);
-    // background: -o-linear-gradient(top, #BCC572 0%, #a9c572 100%);
-    // background: -ms-linear-gradient(top, #BCC572 0%, #a9c572 100%);
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BCC572', endColorstr='#a9c572', GradientType=0);
-    // border: 1px solid #b4bd72;
-    // box-shadow: inset 0 1px 0 #A2D481;
-    // -webkit-box-shadow: inset 0 1px 0 #A2D481;
-    // -moz-box-shadow: inset 0 1px 0 #A2D481;
+    background: #bcd695; 
 }
 
 @mixin container {
@@ -70,7 +58,7 @@ $light-background: #d6e4c3;
     clip-path: polygon(0% 0, 100% 50%, 0% 100%, 0 50%);
 }
 
-@mixin block_tittle {
+@mixin block_title {
 
     width: 100%;
     height: 50px;

@@ -49,7 +49,7 @@ const Header = () => {
 
     return (
         <div className={isHide ? "header hide" : "header"}>
-                <div className="header-container">
+            <div className="header-container">
                 <Link to="/" className="logo-link">
                     <img className="logo" src="/images/icons/logo.png" alt="" />
                 </Link>
@@ -67,29 +67,38 @@ const Header = () => {
                     <img className="profile-icon" src="/images/icons/profile.png" alt="Profile" />
                     <div className="header-item">
                         <input type="checkbox" id="side-checkbox" />
-                        <div className="side-panel" style={{ height: isHide ? "100vh" : "calc((100vh - 74.5px))" }}>
-                            <label className="side-button-2" htmlFor="side-checkbox">+</label>
-                            {
-                            cartItems.length === 0
-                                ? <div className="side-title">Your cart is empty...</div>
-                                : <div className="side-title">Products amount: {cartItems.length}</div>
-                            }
-                            <div className="cart-items">
-                                {cartItems &&
-                                    cartItems.map(item => (<CartItem
-                                        key={item.namerow}
-                                        {...item}
-                                    />))}
-                            </div>
-                            <div className="total-cost">
-                                <div className="total">Total cost: ${Number((totals.reduce((prev, cur) => prev + cur, 0)).toFixed(2))}</div>
-                                <div className="button">
-                                    <button className="btn" onClick={() => {
-                                        dispatch(cleanUpCart())
-                                    }}>To Check Out</button>
+
+                        <div className={`side-panel ${isHide && 'hide'}`}>
+                            <div className="cart-container">
+                                <label className="close-container" htmlFor="side-checkbox">
+                                    <img className="close" src="/images/icons/plus.png" alt="" />
+                                </label>
+
+                                {
+                                    cartItems.length === 0
+                                        ? <div className="dummy">Your cart is empty...</div>
+                                        : <div className="side-title">Products amount: {cartItems.length}</div>
+                                }
+
+                                <div className={`cart-items ${isHide && 'hide'}`}>
+                                    {
+                                        cartItems &&
+                                        cartItems.map(item => <CartItem key={item.namerow}  {...item} />)
+                                    }
                                 </div>
                             </div>
+
+                            <div className="total-cost">
+                                <div className="total">Total cost: ${Number((totals.reduce((prev, cur) => prev + cur, 0)).toFixed(2))}</div>
+
+                                <button className="checkout-button" onClick={() => {
+                                    dispatch(cleanUpCart())
+                                }}>
+                                    To Check Out
+                                </button>
+                            </div>
                         </div>
+
                         <div className="side-button-1-wr">
                             <label className="side-button-1" htmlFor="side-checkbox">
                                 <div className="side-b side-open">

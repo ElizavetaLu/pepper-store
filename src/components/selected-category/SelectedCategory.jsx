@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { openCloseChat } from "../../redux/actions/actions";
-import PopUp from "../popup/PopUp";
-import Card from "../product-card/Card";
-import Chat from "../chat/Chat";
 import CategoryBlock from "./top-row/CategoryBlock";
+import Card from "../product-card/Card";
+import PopUp from "../popup/PopUp";
+import Chat from "../chat/Chat";
 import "./selectedCategory.scss";
 
 const categoriesBlockContent = [
@@ -89,9 +89,7 @@ const SelectedCategory = () => {
                             <div className="text">Filter:</div>
                             <div className="filter">
                                 <div className="name">Price</div>
-                                <div className="vector">
-                                    <img src="/images/icons/arrDown.png" alt="" />
-                                </div>
+                                <img className="vector" src="/images/icons/arrDown.png" alt="" />
                             </div>
                         </div>
 
@@ -105,9 +103,7 @@ const SelectedCategory = () => {
                         <div className="text">Sort by:</div>
                         <div className="filter">
                             <div className="name">Featured</div>
-                            <div className="vector">
-                                <img src="/images/icons/arrDown.png" alt="" />
-                            </div>
+                            <img className="vector" src="/images/icons/arrDown.png" alt="" />
                         </div>
 
                         <div className="product-amount">{category === 'hot p' ? hot.length : categProducts.length} products</div>
@@ -117,53 +113,14 @@ const SelectedCategory = () => {
 
                 <div className="allCards">
                     {!saleProducts ? (category === 'hot p' ?
-                        hot.map(item => (<Card
-                            onSale={item.onSale}
-                            newP={item.new}
-                            rate={item.rate}
-                            key={item.namerow}
-                            name={item.namerow}
-                            image={item.image.fields.file.url}
-                            price={item.price}
-                            salePrice={item.salePrice}
-                        />))
-
+                        hot.map(item => <Card key={item.namerow} {...item} />)
                         : categProducts &&
-                        categProducts.map(item => (<Card
-                            onSale={item.onSale}
-                            newP={item.new}
-                            rate={item.rate}
-                            key={item.namerow}
-                            name={item.namerow}
-                            image={item.image.fields.file.url}
-                            price={item.price}
-                            salePrice={item.salePrice}
-                        />)))
+                        categProducts.map(item => <Card key={item.namerow} {...item} />))
                         : (category === 'hot p' ?
-                            hot.filter(product => product.onSale === true).map(item => (<Card
-                                onSale={item.onSale}
-                                newP={item.new}
-                                rate={item.rate}
-                                key={item.namerow}
-                                name={item.namerow}
-                                image={item.image.fields.file.url}
-                                price={item.price}
-                                salePrice={item.salePrice}
-                            />))
-
+                            hot.filter(product => product.onSale === true).map(item => <Card key={item.namerow} {...item} />)
                             : categProducts &&
-                            categProducts.filter(product => product.onSale === true).map(item => (<Card
-                                onSale={item.onSale}
-                                newP={item.new}
-                                rate={item.rate}
-                                key={item.namerow}
-                                name={item.namerow}
-                                image={item.image.fields.file.url}
-                                price={item.price}
-                                salePrice={item.salePrice}
-                            />)))
+                            categProducts.filter(product => product.onSale === true).map(item => <Card key={item.namerow} {...item} />))
                     }
-
                 </div>
             </div>
 

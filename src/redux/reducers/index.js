@@ -1,6 +1,6 @@
 import cart from "./cart";
 import popup from "./popup";
-import setSelectedProductData from "./setSelectedProductData";
+import selectedProductData from "./selectedProductData";
 import chat from "./chat";
 import { combineReducers } from "redux";
 import products from "./products";
@@ -13,7 +13,7 @@ const allReducers = combineReducers({
     cart,
     products,
     popup,
-    setSelectedProductData,
+    selectedProductData,
     chat,
     reviews,
     considerSection,

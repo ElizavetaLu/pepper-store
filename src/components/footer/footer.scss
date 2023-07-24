@@ -3,37 +3,32 @@
 .footer {
     z-index: 100;
     width: 100%;
-     
+
     padding: 50px 40px;
     @include flex_column_center;
     @include panels_color;
 
-    .logo {
-        margin-bottom: 20px;
-
-        img {
+    .logo-link {
+        .logo {
+            margin-bottom: 20px;
             width: 50px;
         }
     }
 
     .navbar {
         display: flex;
+        gap: 20px;
         text-transform: uppercase;
         font-weight: 600;
-        color: rgb(97 97 97);
-
-        div:nth-child(even) {
-            margin: 0px 20px;
-        }
+        color: $main-light-color;
 
         .nav-item {
-            cursor: default;
-            padding: 0px 3px;
+            cursor: pointer;
             border-bottom: 2px solid transparent;
+            transition: all .2s;
         }
 
         .nav-item:hover {
-            cursor: default;
             border-bottom: 2px solid rgb(97 97 97);
             color: #fff;
         }

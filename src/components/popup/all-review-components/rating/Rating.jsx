@@ -11,7 +11,7 @@ const Rating = () => {
 
     return (
         <div className="star-rating">
-            {[...Array(5)].map((star, indx) => {
+            {[...Array(5)].map((_, indx) => {
                 indx += 1;
                 return (
                     <div

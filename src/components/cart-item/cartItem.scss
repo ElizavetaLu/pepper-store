@@ -1,116 +1,104 @@
 @import '../../variables';
 
 
-.item-in-cart {
+.cart-item {
     display: flex;
-    width: 100%;
-    height: 80px;
-     
-    padding: 6px 10px;
+    gap: 10px;
     background-color: #fff;
-    margin-bottom: 10px;
-    border: 1px solid #000;
-    border-radius: 2px;
+    padding: 5px 8px;
     position: relative;
+    border-radius: 2px;
 
-    .delete {
-        position: absolute;
-        top: -3px;
-        right: 3px;
-        transform: rotate(45deg);
-        font-size: 24px;
-        color: rgb(50, 50, 50);
-    }
+    .item-image-container {
+        width: 60px;
+        height: 60px;
 
-    .delete:hover {
-        color: #000;
-    }
-
-    .image {
-        margin-right: 10px;
-        @include flex_center;
-
-        img {
-            height: 50px;
+        .item-image {
+            width: 100%;
+            height: 100%;
         }
     }
 
-    .column {
-        @include justify_between;
-        flex-direction: column;
-        align-items: flex-start;
+    .item-data {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
 
-        .row {
-            width: 100%;
-            @include justify_between;
-            align-items: center;
+        .item-information {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-            .name {
+            .item-name {
+                max-width: 120px;
                 white-space: nowrap;
                 overflow: hidden;
-                width: 220px;
                 text-overflow: ellipsis;
+                font-size: 14px;
             }
 
-            .row-price {
-                justify-content: flex-start;
-                margin: 4px 0px;
-
-                .prev-price {
-                    font-size: 14px;
-                    text-decoration: line-through;
-                }
-
-                .current-price {
-                    font-size: 16px;
-                    font-weight: 600;
-                    color: rgb(211, 1, 1);
-                    margin-right: 6px;
-                }
-
-                .price {
-                    font-size: 14px;
-                }
-
+            .row {
+                font-size: 12px;
+                color: #919191;
             }
+        }
 
-            .qnt {
+        .right {
+            display: flex;
+            align-items: center;
+
+            .item-qty {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                padding: 5px 4px;
-                border: 1px solid rgb(207, 207, 207);
 
-                .item {
+                .count-item {
                     cursor: pointer;
+                    border: none;
+                    background-color: transparent;
+                    border: 1px solid transparent;
+                    border-radius: 100%;
+                    width: 20px;
+                    height: 20px;
+                    @include flex_center;
+                    transition: all .2s;
 
-                    img {
+                    .count-icon {
                         width: 10px;
                     }
                 }
 
-                .input {
-                    text-align: center;
-                    font-size: 14px;
-                    border: none;
-                    width: 35px;
+                .count-item:hover {
+                    border: 1px solid #000;
+                    border-radius: 100%;
+                }
+
+                .qty-input {
                     outline: none;
-                }
-
-                .input::-webkit-outer-spin-button,
-                .input::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                    margin: 0;
-                }
-
-                .input[type=number] {
-                    -moz-appearance: textfield;
+                    border: none;
+                    width: 30px;
+                    text-align: center;
                 }
             }
 
-            .total {
-                font-weight: 600;
-                font-size: 15px;
+            .delete {
+                cursor: pointer;
+                border: none;
+                background-color: #fff;
+                width: 25px;
+                height: 25px;
+                @include flex_center;
+                border-radius: 100%;
+                box-shadow: 0px 0px 2px #d3d3d3;
+                transition: all .2s;
+
+                .delete-icon {
+                    width: 16px;
+                }
+            }
+
+            .delete:hover {
+                background-color: #eeeeee;
             }
         }
     }

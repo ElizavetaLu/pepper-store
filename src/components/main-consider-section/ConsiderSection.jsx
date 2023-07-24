@@ -47,54 +47,29 @@ const ConsiderSection = () => {
 
                     {active === 'new'
                         ? <div className="category-cards">
-                            {newAddition &&
-                                newAddition.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide"><Card
-                                    onSale={item.onSale}
-                                    newP={item.new}
-                                    rate={item.rate}
-                                    key={item.namerow}
-                                    name={item.namerow}
-                                    image={item.image.fields.file.url}
-                                    price={item.price}
-                                    salePrice={item.salePrice}
-
-                                    allData={item}
-                                /></SwiperSlide>))
+                            {
+                                newAddition &&
+                                newAddition.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide">
+                                    <Card {...item} />
+                                </SwiperSlide>))
 
                             }
                         </div>
                         : active === 'sale'
                             ? <div className="category-cards">
-                                {onSale &&
-                                    onSale.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide"><Card
-                                        onSale={item.onSale}
-                                        newP={item.new}
-                                        rate={item.rate}
-                                        key={item.namerow}
-                                        name={item.namerow}
-                                        image={item.image.fields.file.url}
-                                        price={item.price}
-                                        salePrice={item.salePrice}
-
-                                        allData={item}
-                                    /></SwiperSlide>))
+                                {
+                                    onSale &&
+                                    onSale.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide">
+                                        <Card {...item} />
+                                    </SwiperSlide>))
 
                                 }
                             </div>
                             : <div className="category-cards">
                                 {mostPopular &&
-                                    mostPopular.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide"><Card
-                                        onSale={item.onSale}
-                                        newP={item.new}
-                                        rate={item.rate}
-                                        key={item.namerow}
-                                        name={item.namerow}
-                                        image={item.image.fields.file.url}
-                                        price={item.price}
-                                        salePrice={item.salePrice}
-
-                                        allData={item}
-                                    /></SwiperSlide>))
+                                    mostPopular.map(item => (<SwiperSlide key={item.namerow} className="swiper-slide">
+                                        <Card {...item} />
+                                    </SwiperSlide>))
                                 }
                             </div>
                     }

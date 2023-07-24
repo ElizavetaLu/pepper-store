@@ -16,7 +16,7 @@ const ReviewSection = ({ value, setValue, product }) => {
 
 
     const [reviews] = useCollectionData(query);
-    const currentProductReview = reviews && auth.currentUser ? reviews.filter(item => item.product === product.namerow) : [];
+    const currentProductReview = (reviews && auth.currentUser) ? reviews.filter(item => item.product === product) : [];
 
 
     const rating = useSelector(state => state.rating.rating);
@@ -58,7 +58,7 @@ const ReviewSection = ({ value, setValue, product }) => {
                                         review={review.text}
                                         rating={review.rating}
                                         auth={auth}
-                                        time={review.createdAt ? new Date(review.createdAt.seconds * 1000).toString() : '--:--'}
+                                        creationTime={review.createdAt}
                                     />
                                 )
                             })

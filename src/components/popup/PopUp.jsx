@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { showPopup, openCloseReviews, setHover, setRating, addToCart } from "../../redux/actions/actions";
 import ReviewSection from "./all-review-components/review-section/ReviewSection";
+import ProductMarker from "../product-marker/ProductMarker";
 import Details from "./details/Details";
 import './popup.scss';
 
@@ -21,7 +22,7 @@ const PopUp = ({ isActive }) => {
 
     const onAddToCart = () => {
         if (!value) return;
-        dispatch(addToCart(product, value));
+        dispatch(addToCart(selectedProductData, value));
         setValue(1);
         closeModal();
     }
@@ -36,22 +37,30 @@ const PopUp = ({ isActive }) => {
 
     const dispatch = useDispatch();
 
-    const product = useSelector(state => state.setSelectedProductData);
+    const { selectedProductData } = useSelector(state => state.selectedProductData);
 
     const reviewsPanel = useSelector(state => state.reviews);
 
-    const currentPrice = product.onSale ? product.salePrice : product.price;
+    if (!selectedProductData) return
 
-
+    const currentPrice = selectedProductData.onSale ? selectedProductData.salePrice : selectedProductData.price;
+    
     return (
         <div className={isActive ? "modal active" : "modal"} onClick={closeModal}>
-            {Object.keys(product).length === 0
-                ? null
-                :
+            {selectedProductData &&
                 <div className="modal-content" onClick={e => {
                     if (reviewsPanel) dispatch(openCloseReviews())
                     e.stopPropagation()
                 }}>
+
+                    <div className="tags">
+                        {
+                            selectedProductData.onSale && <ProductMarker text="sale" sale />
+                        }
+                        {
+                            selectedProductData.new && <ProductMarker text="new" newArrival />
+                        }
+                    </div>
 
                     <div className="background"></div>
 
@@ -62,14 +71,14 @@ const PopUp = ({ isActive }) => {
                     <div className="photo-container">
                         <img
                             className="product-photo"
-                            src={`https:${product.image.fields.file.url}`}
+                            src={`https:${selectedProductData.image.fields.file.url}`}
                             alt=""
                         />
                     </div>
 
                     <div className="data">
                         <div className="main-information">
-                            <div className="name">{product.namerow}</div>
+                            <div className="name">{selectedProductData.namerow}</div>
 
                             <div className="main-cta">
 
@@ -78,12 +87,12 @@ const PopUp = ({ isActive }) => {
                                     <div className="cta-block-data">
                                         <div className="price">
                                             {
-                                                product.onSale
+                                                selectedProductData.onSale
                                                     ? <div className="sale-price">
-                                                        <div className="current">${product.salePrice}</div>
-                                                        <div className="previous">${product.price}</div>
+                                                        <div className="current">${selectedProductData.salePrice}</div>
+                                                        <div className="previous">${selectedProductData.price}</div>
                                                     </div>
-                                                    : <div className="current-price">${product.price}</div>
+                                                    : <div className="current-price">${selectedProductData.price}</div>
                                             }
                                             <div className="weight">/ 1kg</div>
                                         </div>
@@ -131,7 +140,7 @@ const PopUp = ({ isActive }) => {
 
                             {
                                 activeSection === 'description'
-                                    ? <p className="description">{product.description}</p>
+                                    ? <p className="description">{selectedProductData.description}</p>
 
                                     : activeSection === 'details'
                                         ? <Details />
@@ -140,7 +149,7 @@ const PopUp = ({ isActive }) => {
                                             ? <ReviewSection
                                                 value={formValue}
                                                 setValue={setFormValue}
-                                                product={product.namerow}
+                                                product={selectedProductData.namerow}
                                             />
                                             : null
                             }

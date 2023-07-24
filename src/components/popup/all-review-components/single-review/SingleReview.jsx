@@ -1,27 +1,47 @@
 import React from "react";
 import "./review.scss";
 
-const SingleReview = ({ review, time, rating }) => {
+const SingleReview = ({ review, creationTime, rating }) => {
+
+    const date = new Date(creationTime.seconds * 1000)
+
+    const getDate = () => {
+        const hoursRow = date.getHours();
+        const hours = hoursRow.toString().length === 1 ? '0' + hoursRow : hoursRow;
+        
+        const minutesRow = date.getMinutes(); 
+        const minutes = minutesRow.toString().length === 1 ? '0' + minutesRow : minutesRow;
+
+
+        const day = date.getDate();
+
+        const monthRow = date.getMonth() + 1; 
+        const month = monthRow.toString().length === 1 ? '0' + monthRow : monthRow;
+
+        const year = date.getFullYear();
+
+        return `${hours}:${minutes}, ${day}.${month}.${year}`
+    }
 
     return (
-        <div className="review-wrapper">
-            <div className="review-container">
-                <div className="customer-info">
-                    <div className="customer">
-                        <div className="customer-avatar">
-                            <img src="/images/icons/profile-user.png" alt="" />
-                        </div>
-                        <div className="customer-name">
-                            <div className="text">Customer Name</div>
-                            <div className="date">{time.slice(0, 24)}</div>
-                        </div>
-                    </div>
-                    {rating && <div className="customer-rate">
-                        {/* <div className="number">{rating}</div> */}
-                        <div className="star">
-                            <img src="/images/icons/star.png" alt="" />
-                        </div>
-                    </div>}
+        <div className="review-card">
+            <div className="avatar">
+                <img className="avatar-img" src="/images/icons/user-avatar.png" alt="avatar" />
+            </div>
+
+            <div className="review-data">
+                <div className="row">
+                    <div className="user-name">Customer Name</div>
+                    <div className="date">{getDate()}</div>
+                </div>
+                <div className="rating">
+                    {
+                        [...Array(rating)].map((_, indx) => {
+                            return (
+                                <img key={indx} className="star" src="/images/icons/star.png" alt="star" />
+                            )
+                        })
+                    }
                 </div>
                 <div className="review-text">{review}</div>
             </div>
