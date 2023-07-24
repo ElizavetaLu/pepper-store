@@ -11,7 +11,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.5s;
-    z-index: 9999;
+    z-index: 1;
 
     .modal-content {
         position: relative;
@@ -21,6 +21,15 @@
         width: 850px;
         height: 550px;
         display: flex;
+
+        .tags {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
 
         .close-button {
             position: absolute;
@@ -152,10 +161,11 @@
                             }
 
                             .item:hover {
-                            transform: scale(1.05);
+                                transform: scale(1.05);
                             }
+
                             .item:active {
-                            transform: scale(1);
+                                transform: scale(1);
                             }
 
                             .qty-input {
@@ -165,17 +175,7 @@
                                 outline: none;
                                 font-size: 20px;
                                 text-align: center;
-                            }
-
-                            input::-webkit-outer-spin-button,
-                            input::-webkit-inner-spin-button {
-                                -webkit-appearance: none;
-                                margin: 0;
-                            }
-
-                            input[type=number] {
-                                -moz-appearance: textfield;
-                            }
+                            } 
                         }
                     }
                 }

@@ -1,0 +1,15 @@
+.review {
+    .reviews-panel {
+        padding-top: 20px;
+
+        .dumb {
+            color: #c3c3c3;
+        }
+
+        .all-reviews {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 15px;
+        }
+    }
+}

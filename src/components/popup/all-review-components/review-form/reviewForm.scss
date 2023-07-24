@@ -1,26 +1,9 @@
 @import "../../../../variables";
 
-.leave-review {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 10px;
-    margin-top: 10px;
-
-    .review-title {
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .rate-stars {
-        height: 24px;
-        width: 150px;
-        display: flex;
-        cursor: pointer;
-    }
-
+.leave-review { 
     .review-form {
         width: 100%;
+        margin-top: 10px;
 
         .review-input {
             width: 83%;
@@ -28,7 +11,7 @@
             outline: none;
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid rgb(195, 195, 195);
+            border-bottom: 1.5px solid rgb(195, 195, 195);
             font-size: 16px;
             height: 30px;
         }
@@ -37,7 +20,6 @@
             @include main_btn;
             font-size: 16px;
             padding: 5px 10px;
-            ;
         }
 
         .btn:disabled {

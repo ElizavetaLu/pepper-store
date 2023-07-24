@@ -3,11 +3,10 @@ import {
     incrementInCart,
     decrementInCart,
     removeFromCart,
-    onHandChangeInCart,
-    setProductData,
-    showPopup
+    onHandChangeInCart
 } from "../../redux/actions/actions";
 import "./cartItem.scss";
+
 
 const CartItem = (props) => {
 
@@ -17,66 +16,60 @@ const CartItem = (props) => {
     const dispatch = useDispatch();
 
     return (
-
-        <div className="item-in-cart" onClick={() => {
-            dispatch(setProductData(props))
-            dispatch(showPopup())
-        }}>
-            <div className="image">
-                {/* <img src={`https:${props.image.fields.file.url}`} alt="" /> */}
+        <div className="cart-item">
+            <div className="item-image-container">
+                <img className="item-image" src={`https:${props.image.fields.file.url}`} alt="" />
             </div>
 
-            <div className="delete" onClick={e => {
-                e.stopPropagation()
-                dispatch(removeFromCart(props.namerow))
-            }} >+</div>
-
-            <div className="column">
-                <div className="row">
-                    <div className="name">{props.namerow}</div>
+            <div className="item-data">
+                <div className="item-information">
+                    <p className="item-name">{props.namerow}</p>
+                    <div className="row">
+                        <span className="text">Price for 1 kg: </span>
+                        <span className="total-amount">0</span>
+                    </div>
+                    <div className="total">
+                        <span className="text">Total: </span>
+                        <span className="total-amount">0</span>
+                    </div>
                 </div>
 
-                <div className="row">
+                <div className="right">
+                    <div className="item-qty">
 
-                    {props.onSale
-                        ? <div className="row-price">
-                            <div className="current-price">${props.salePrice}</div>
-                            <div className="prev-price">${props.price}</div>
-                        </div>
-                        : <div className="row-price">
-                            <div className="price">${props.price}</div>
-                        </div>
-                    }
-
-
-                    <div className="qnt">
-                        <div className="item" onClick={e => {
+                        <button className="count-item" onClick={e => {
                             e.stopPropagation()
-                            dispatch(decrementInCart(props.namerow))
+                            dispatch(incrementInCart(props.namerow))
                         }}>
-                            <img src="/images/icons/minus.png" alt="" />
-                        </div>
+                            <img className="count-icon" src="/images/icons/plus.png" alt="" />
+                        </button>
+
                         <input
                             type="number"
-                            className="input"
+                            className="qty-input"
                             value={qty}
                             onChange={e => {
                                 e.stopPropagation()
                                 dispatch(onHandChangeInCart(e.target.value, props.namerow))
                             }}
-                            onClick={e => e.stopPropagation()}
                         />
-                        <div className="item" onClick={e => {
+
+                        <button className="count-item" onClick={e => {
                             e.stopPropagation()
-                            dispatch(incrementInCart(props.namerow))
+                            dispatch(decrementInCart(props.namerow))
                         }}>
-                            <img src="/images/icons/plus.png" alt="" />
-                        </div>
+                            <img className="count-icon" src="/images/icons/minus.png" alt="" />
+                        </button>
                     </div>
-
-
-                    <div className="total">Total: {props.onSale ? Number((qty * props.salePrice).toFixed(2)) : Number((qty * props.price).toFixed(2))}$</div>
-
+                    <button
+                        className="delete"
+                        onClick={e => {
+                            e.stopPropagation();
+                            dispatch(removeFromCart(props.namerow));
+                        }}
+                    >
+                        <img className="delete-icon" src="/images/icons/delete.png" alt="" />
+                    </button>
                 </div>
             </div>
         </div>

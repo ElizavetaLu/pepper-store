@@ -1,5 +1,6 @@
-.product-marker {
-    padding: 0 4px;
+.product-marker { 
+    padding: 0 7px;
+    height: 22px;
 
     .product-marker-text {
         font-size: 10px;
@@ -10,9 +11,9 @@
 }
 
 .product-marker.sale {
-    background-color: rgb(209, 0, 0);
+    background-color: #ff4949;
 }
 
 .product-marker.new {
-    background-color: rgb(0, 170, 51);
+    background-color: #00c245;
 }

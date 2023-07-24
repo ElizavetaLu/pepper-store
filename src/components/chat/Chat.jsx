@@ -60,7 +60,7 @@ const Chat = () => {
     const ref = useChatScroll(messages)
 
     const isChatActive = useSelector(state => state.chat)
-    const prevSelectedProduct = useSelector(state => state.setSelectedProductData)
+    const { selectedProductData } = useSelector(state => state.selectedProductData)
     const dispatch = useDispatch()
 
     const currentUserMessages = messages && auth.currentUser ? messages.filter(item => item.uid === auth.currentUser.uid) : null
@@ -78,28 +78,29 @@ const Chat = () => {
                     </div>
                 </div>
 
-                {Object.keys(prevSelectedProduct).length === 0
-                    ? null
-                    : <div className="prevProduct">
-                        <div className="last-view">Last viewed product:</div>
+                {
+                    selectedProductData &&
+                    <div className="prevProduct">
+                        <div className="last-view">Last viewed:</div>
                         <div className="productInfo">
                             <div className="prev-product-img">
-                                <img src={`https:${prevSelectedProduct.image.fields.file.url}`} alt="" />
+                                <img src={`https:${selectedProductData.image.fields.file.url}`} alt="" />
                             </div>
                             <div className="product-data">
-                                <div className="product-name">{prevSelectedProduct.namerow}</div>
-                                {prevSelectedProduct.onSale
+                                <div className="product-name">{selectedProductData.namerow}</div>
+                                {selectedProductData.onSale
                                     ? <div className="row price">
-                                        <div className="prev-price">${prevSelectedProduct.price}</div>
-                                        <div className="current-price">${prevSelectedProduct.salePrice}</div>
+                                        <div className="prev-price">${selectedProductData.price}</div>
+                                        <div className="current-price">${selectedProductData.salePrice}</div>
                                     </div>
                                     : <div className="row price">
-                                        <div className="price">${prevSelectedProduct.price}</div>
+                                        <div className="price">${selectedProductData.price}</div>
                                     </div>
                                 }
                             </div>
                         </div>
-                    </div>}
+                    </div>
+                }
 
                 <div className="chat-room" ref={ref} >
                     {currentUserMessages && currentUserMessages.map((msg, indx) => (
