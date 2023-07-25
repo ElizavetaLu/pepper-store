@@ -36,9 +36,9 @@ const ConsiderSection = () => {
             <div className="category-cards">
 
                 <Swiper
-                    slidesPerView={6}
+                    slidesPerView={5}
                     grid={{ rows: 2 }}
-                    slidesPerGroup={12}
+                    spaceBetween={15}
                     navigation
                     modules={[Grid, Navigation]}
                     className="mySwiper"

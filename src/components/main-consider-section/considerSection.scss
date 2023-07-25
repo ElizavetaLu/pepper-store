@@ -5,7 +5,7 @@
     @include flex_column_center;
     position: relative;
     @include container;
-    
+
     .navigation {
         width: 103%;
         position: absolute;
@@ -52,12 +52,22 @@
     }
 
     .category-cards {
-        display: flex;
-        height: 628px;
-        justify-content: center;
+        height: 650px;
+        margin-top: 20px;
         width: 100%;
     }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 30px;
+}
+
 
 .swiper {
     width: 100%;
@@ -67,23 +77,6 @@
 }
 
 .swiper-slide {
-    text-align: center;
     height: calc((100% - 30px) / 2) !important;
-}
-
-.swiper-wrapper {
-    margin-top: 34px;
-    margin-left: 20px;
-}
-
-.swiper-button-next, 
-.swiper-button-prev{
-    right: -2px;
-    color: #000;
-    top: 53%;
-}
-
-.swiper-button-next::after, 
-.swiper-button-prev::after{
-    font-size: 30px;
+    @include flex_center;
 }

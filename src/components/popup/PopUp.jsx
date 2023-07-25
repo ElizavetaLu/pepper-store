@@ -103,7 +103,7 @@ const PopUp = ({ isActive }) => {
                                     <p className="title">Quantity</p>
                                     <div className="cta-block-data qty">
                                         <button className="item" onClick={e => {
-                                            if (!value) return
+                                            if (value === 0.1) return
                                             setValue(prev => Number((prev - 0.1).toFixed(2)))
                                         }}>
                                             <img className="item-icon" src="/images/icons/white-minus.png" alt="" />

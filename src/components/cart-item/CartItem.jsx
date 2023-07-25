@@ -49,13 +49,13 @@ const CartItem = (props) => {
                             className="qty-input"
                             value={qty}
                             onChange={e => {
-                                e.stopPropagation()
+                                e.stopPropagation() 
                                 dispatch(onHandChangeInCart(e.target.value, props.namerow))
                             }}
                         />
 
                         <button className="count-item" onClick={e => {
-                            e.stopPropagation()
+                            e.stopPropagation() 
                             dispatch(decrementInCart(props.namerow))
                         }}>
                             <img className="count-icon" src="/images/icons/minus.png" alt="" />

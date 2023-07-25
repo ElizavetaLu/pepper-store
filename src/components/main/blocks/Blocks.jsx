@@ -7,7 +7,7 @@ const Blocks = () => {
     return (
         <div className="blocks-container">
 
-            <SectionTitle title={"Block"} />
+            <SectionTitle title="Interesting to know" />
 
             <div className="blocks">
                 <div className="main-block" >

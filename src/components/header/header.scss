@@ -133,13 +133,14 @@
                             border: none;
                             margin-top: 15px;
                             width: 100%;
-                            background-color: #efefef;
-                            color: #000;
+                            background-color: #47b849;
+                            color: #fff;
                             padding: 15px 0;
                             font-size: 22px;
+                            transition: all .2s;
                         }
                         .checkout-button:hover { 
-                            background-color: #dadada; 
+                            background-color: #3c9e3e; 
                         }
                     }
                 }
