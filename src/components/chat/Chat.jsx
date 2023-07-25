@@ -69,9 +69,7 @@ const Chat = () => {
         <div className={isChatActive ? "chat active" : "chat"} onClick={() => dispatch(openCloseChat())}>
             <div className="chat-content" onClick={e => e.stopPropagation()}>
                 <div className="chat-header">
-                    <div className="logo">
-                        <img src="/images/icons/bell-pepper.png" alt="" />
-                    </div>
+                    <img className="logo" src="/images/icons/logo.png" alt="" />
                     <div className="info">
                         <div className="name">Name</div>
                         <div className="text">Text us if you have any questions</div>
@@ -83,17 +81,16 @@ const Chat = () => {
                     <div className="prevProduct">
                         <div className="last-view">Last viewed:</div>
                         <div className="productInfo">
-                            <div className="prev-product-img">
-                                <img src={`https:${selectedProductData.image.fields.file.url}`} alt="" />
-                            </div>
+                            <img className="product-img" src={`https:${selectedProductData.image.fields.file.url}`} alt="" />
+
                             <div className="product-data">
                                 <div className="product-name">{selectedProductData.namerow}</div>
                                 {selectedProductData.onSale
-                                    ? <div className="row price">
+                                    ? <div className="row-price">
                                         <div className="prev-price">${selectedProductData.price}</div>
                                         <div className="current-price">${selectedProductData.salePrice}</div>
                                     </div>
-                                    : <div className="row price">
+                                    : <div className="row-price">
                                         <div className="price">${selectedProductData.price}</div>
                                     </div>
                                 }

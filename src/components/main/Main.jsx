@@ -39,7 +39,7 @@ const Main = () => {
 
                 <div className="how-to-container">
 
-                    <SectionTitle title={"Block"} />
+                    <SectionTitle title="Pepper Care Tips" />
 
                     <div className="how-to-grow-peppers">
                         <div className="info-container">

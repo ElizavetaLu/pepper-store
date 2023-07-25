@@ -16,7 +16,6 @@
     z-index: 1;
 
     .chat-content {
-
         @include panels_color;
         width: 380px;
         height: 500px;
@@ -37,24 +36,11 @@
             border-bottom: 1px solid rgb(234, 234, 234);
 
             .logo {
-                margin-left: 20px;
-                margin-right: 10px;
-                background-color: #fff;
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-                @include flex_center;
-
-                img {
-                    width: 35px;
-                }
+                width: 35px;
+                margin: 0 20px;
             }
 
             .info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-
                 .name {
                     font-size: 17px;
                 }
@@ -67,7 +53,6 @@
         }
 
         .prevProduct {
-
             padding: 4px 10px;
             height: 80px;
             display: flex;
@@ -85,19 +70,9 @@
             .productInfo {
                 display: flex;
 
-                .prev-product-img {
-
-                    margin-right: 6px;
-                    height: 73px;
-                    width: 73px;
-                    border-radius: 50%;
-                    background-color: #fff;
-                    @include flex_center;
-
-                    img {
-                        border-radius: 20px;
-                        height: 60px;
-                    }
+                .product-img {
+                    height: 60px;
+                    margin: 0 6px;
                 }
 
                 .product-data {
@@ -105,7 +80,7 @@
                     flex-direction: column;
                     justify-content: center;
 
-                    .row.price {
+                    .row-price {
                         margin-top: 8px;
                         display: flex;
                         align-items: center;
@@ -141,7 +116,6 @@
 
         .chat-footer {
             background-color: rgb(247, 247, 247);
-
             height: 60px;
             border-top: 1.1px solid rgb(231, 231, 231);
             border-bottom-left-radius: 14px;
@@ -150,8 +124,7 @@
             align-items: center;
             width: 100%;
 
-            .msg-input {
-
+            .msg-input { 
                 padding-left: 15px;
                 width: 100%;
                 outline: none;
