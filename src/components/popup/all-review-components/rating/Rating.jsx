@@ -22,8 +22,8 @@ const Rating = () => {
                         onMouseLeave={() => dispatch(setHover(rating))}
                     >
                         {indx <= (hover || rating)
-                            ? <img src="/images/icons/star.png" alt="" className="selected" />
-                            : <img src="/images/icons/empt-star.png" alt="" className="empty" />
+                            ? <img src="/pepper-store/build//images/icons/star.png" alt="" className="selected" />
+                            : <img src="/pepper-store/build//images/icons/empt-star.png" alt="" className="empty" />
                         }
                     </div>
                 );

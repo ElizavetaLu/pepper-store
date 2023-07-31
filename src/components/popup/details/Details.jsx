@@ -11,7 +11,7 @@ const Details = () => {
                 <span className="title">Rating:</span>
                 <div className="rating">
                     <span className="number">{selectedProductData.rate}</span>
-                    <img className="star" src="/images/icons/star.png" alt="" />
+                    <img className="star" src="/pepper-store/build//images/icons/star.png" alt="" />
                 </div>
             </div>
 

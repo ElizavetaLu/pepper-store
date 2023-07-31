@@ -50,6 +50,18 @@ const SelectedCategory = () => {
 
     const [saleProducts, setSaleProducts] = useState(false);
 
+    const saleProductsList = productsArray => {
+        return productsArray.filter(product => product.onSale === true).map(item => <Card key={item.namerow} {...item} />)
+    }
+
+    const getProductsAmount = () => {
+        if (saleProducts && category === 'hot p') return saleProductsList(hot).length;
+        if (!saleProducts && category === 'hot p') return hot.length;
+
+        if (saleProducts) return saleProductsList(categProducts).length;
+        if (!saleProducts) return categProducts.length;
+    }
+
 
     return (
         <div className="category-container">
@@ -89,7 +101,7 @@ const SelectedCategory = () => {
                             <div className="text">Filter:</div>
                             <div className="filter">
                                 <div className="name">Price</div>
-                                <img className="vector" src="/images/icons/arrDown.png" alt="" />
+                                <img className="vector" src="/pepper-store/build//images/icons/arrDown.png" alt="" />
                             </div>
                         </div>
 
@@ -103,23 +115,22 @@ const SelectedCategory = () => {
                         <div className="text">Sort by:</div>
                         <div className="filter">
                             <div className="name">Featured</div>
-                            <img className="vector" src="/images/icons/arrDown.png" alt="" />
+                            <img className="vector" src="/pepper-store/build//images/icons/arrDown.png" alt="" />
                         </div>
 
-                        <div className="product-amount">{category === 'hot p' ? hot.length : categProducts.length} products</div>
+                        <div className="product-amount">{getProductsAmount()} products</div>
                     </div>
                 </div>
 
 
                 <div className="allCards">
-                    {!saleProducts ? (category === 'hot p' ?
-                        hot.map(item => <Card key={item.namerow} {...item} />)
-                        : categProducts &&
-                        categProducts.map(item => <Card key={item.namerow} {...item} />))
-                        : (category === 'hot p' ?
-                            hot.filter(product => product.onSale === true).map(item => <Card key={item.namerow} {...item} />)
+                    {
+                        !saleProducts ? (category === 'hot p' ?
+                            hot.map(item => <Card key={item.namerow} {...item} />)
                             : categProducts &&
-                            categProducts.filter(product => product.onSale === true).map(item => <Card key={item.namerow} {...item} />))
+                            categProducts.map(item => <Card key={item.namerow} {...item} />))
+                            : (category === 'hot p' ? saleProductsList(hot) : categProducts
+                                && saleProductsList(categProducts))
                     }
                 </div>
             </div>
@@ -129,7 +140,7 @@ const SelectedCategory = () => {
             <div className="chat-icon-container">
                 <div></div>
                 <div className="chat-icon" onClick={() => dispatch(openCloseChat())}>
-                    <img src="/images/icons/chat.png" alt="" />
+                    <img src="/pepper-store/build//images/icons/chat.png" alt="" />
                 </div>
             </div>
 

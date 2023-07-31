@@ -14,6 +14,7 @@
 
         .rating {
             display: flex;
+            align-items: center;
             gap: 5px;
 
             .number {
@@ -22,6 +23,7 @@
 
             .star {
                 width: 25px;
+                margin-bottom: 3px;
             }
         }
 

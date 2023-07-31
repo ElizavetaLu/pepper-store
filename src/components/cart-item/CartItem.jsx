@@ -18,7 +18,7 @@ const CartItem = (props) => {
     return (
         <div className="cart-item">
             <div className="item-image-container">
-                <img className="item-image" src={`https:${props.image.fields.file.url}`} alt="" />
+                <img className="item-image" src={`https:${props.image.fields?.file.url}`} alt="" />
             </div>
 
             <div className="item-data">
@@ -41,7 +41,7 @@ const CartItem = (props) => {
                             e.stopPropagation()
                             dispatch(incrementInCart(props.namerow))
                         }}>
-                            <img className="count-icon" src="/images/icons/plus.png" alt="" />
+                            <img className="count-icon" src="/pepper-store/build//images/icons/plus.png" alt="" />
                         </button>
 
                         <input
@@ -58,7 +58,7 @@ const CartItem = (props) => {
                             e.stopPropagation() 
                             dispatch(decrementInCart(props.namerow))
                         }}>
-                            <img className="count-icon" src="/images/icons/minus.png" alt="" />
+                            <img className="count-icon" src="/pepper-store/build//images/icons/minus.png" alt="" />
                         </button>
                     </div>
                     <button
@@ -68,7 +68,7 @@ const CartItem = (props) => {
                             dispatch(removeFromCart(props.namerow));
                         }}
                     >
-                        <img className="delete-icon" src="/images/icons/delete.png" alt="" />
+                        <img className="delete-icon" src="/pepper-store/build//images/icons/delete.png" alt="" />
                     </button>
                 </div>
             </div>

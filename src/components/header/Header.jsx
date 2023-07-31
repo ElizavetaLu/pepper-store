@@ -50,8 +50,8 @@ const Header = () => {
     return (
         <div className={isHide ? "header hide" : "header"}>
             <div className="header-container">
-                <Link to="/" className="logo-link">
-                    <img className="logo" src="/images/icons/logo.png" alt="" />
+                <Link to="/pepper-store/build/" className="logo-link">
+                    <img className="logo" src="/pepper-store/build//images/icons/logo.png" alt="" />
                 </Link>
                 <div className="categories">
                     {
@@ -64,14 +64,14 @@ const Header = () => {
                     <HeaderLink name="Contacts" />
                 </div>
                 <div className="header-items">
-                    <img className="profile-icon" src="/images/icons/profile.png" alt="Profile" />
+                    <img className="profile-icon" src="/pepper-store/build//images/icons/profile.png" alt="Profile" />
                     <div className="header-item">
                         <input type="checkbox" id="side-checkbox" />
 
                         <div className={`side-panel ${isHide && 'hide'}`}>
                             <div className="cart-container">
                                 <label className="close-container" htmlFor="side-checkbox">
-                                    <img className="close" src="/images/icons/plus.png" alt="" />
+                                    <img className="close" src="/pepper-store/build//images/icons/plus.png" alt="" />
                                 </label>
 
                                 {
@@ -83,7 +83,7 @@ const Header = () => {
                                 <div className={`cart-items ${isHide && 'hide'}`}>
                                     {
                                         cartItems &&
-                                        cartItems.map(item => <CartItem key={item.namerow}  {...item} />)
+                                        cartItems.map(item => <CartItem key={item.namerow} {...item} />)
                                     }
                                 </div>
                             </div>
@@ -102,10 +102,10 @@ const Header = () => {
                         <div className="side-button-1-wr">
                             <label className="side-button-1" htmlFor="side-checkbox">
                                 <div className="side-b side-open">
-                                    <img className="cart" src="/images/icons/cart-icon.png" alt="Cart" />
+                                    <img className="cart" src="/pepper-store/build//images/icons/cart-icon.png" alt="Cart" />
                                 </div>
                                 <div className="side-b side-close">
-                                    <img className="cart" src="/images/icons/cart-icon.png" alt="Cart" />
+                                    <img className="cart" src="/pepper-store/build//images/icons/cart-icon.png" alt="Cart" />
                                 </div>
                             </label>
                         </div>

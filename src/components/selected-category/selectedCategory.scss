@@ -32,7 +32,7 @@
                 .product-amount {
                     margin-left: 30px;
                     color: rgb(128, 128, 128);
-                    font-size: 15;
+                    font-size: 15px;
                 }
 
                 .item {
@@ -59,16 +59,16 @@
                     }
                 }
             }
-        } 
-            
-            .allCards {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 20px;
-                margin-top: 50px;
-                margin-bottom: $section_end;
-            } 
+        }
+
+        .allCards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 50px;
+            margin-bottom: $section_end;
+        }
     }
 
     .chat-icon-container {
@@ -79,7 +79,7 @@
         left: 0;
         position: fixed;
         margin: 0 auto;
-        z-index: 101;
+        z-index: 1;
 
         .chat-icon {
             background-color: black;

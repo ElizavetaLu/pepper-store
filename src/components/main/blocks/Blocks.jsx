@@ -12,7 +12,7 @@ const Blocks = () => {
             <div className="blocks">
                 <div className="main-block" >
                     <Block
-                        img="/images/water-g9548613a4_1920.jpg"
+                        img="/pepper-store/build//images/water-g9548613a4_1920.jpg"
                         text="Our best selling peppers"
                         lg
                     />
@@ -20,11 +20,11 @@ const Blocks = () => {
 
                 <div className="small-blocks">
                     <Block
-                        img="/images/sierpeper-gc1a7e5ab6_1920.jpg"
+                        img="/pepper-store/build//images/sierpeper-gc1a7e5ab6_1920.jpg"
                         text="What to grow in current season"
                     />
                     <Block
-                        img="/images/paprika-gb98e3c808_1920.jpg"
+                        img="/pepper-store/build//images/paprika-gb98e3c808_1920.jpg"
                         text="Fast growing peppers"
                     />
                 </div>

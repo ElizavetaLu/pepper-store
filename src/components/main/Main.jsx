@@ -18,7 +18,7 @@ const Main = () => {
         <div className="main" >
 
             <div className="introduction">
-                <img src="/images/chilli-seeds_1200x1200.webp" alt="" />
+                <img src="/pepper-store/build//images/chilli-seeds_1200x1200.webp" alt="" />
 
                 <div className="introduction-text">
                     <div className="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium laborum earum pariatur expedita porro nisi est obcaecati veritatis natus molestias! Numquam deserunt modi aut animi nulla eius, laborum eum...</div>
@@ -51,7 +51,7 @@ const Main = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="block" style={{ backgroundImage: 'url("/images/chili-g7ea6ab88a_1920.jpg")' }}>
+                        <div className="block" style={{ backgroundImage: 'url("/pepper-store/build//images/chili-g7ea6ab88a_1920.jpg")' }}>
                             <div className="title">
                                 <div className="lowerCase">How</div>
                                 <div className="">to grow</div>
@@ -68,7 +68,7 @@ const Main = () => {
             <div className="chat-icon-container">
                 <div></div>
                 <div className="chat-icon" onClick={() => dispatch(openCloseChat())}>
-                    <img src="/images/icons/chat.png" alt="" />
+                    <img src="/pepper-store/build//images/icons/chat.png" alt="" />
                 </div>
             </div>
 

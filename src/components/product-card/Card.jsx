@@ -51,7 +51,7 @@ const Card = (productFullData) => {
                 <div className="name">{namerow}</div>
 
                 <button className="button" onClick={onAddToCart}>
-                    <img className="button-icon" src="/images/icons/white-plus.png" alt="add to cart" title="add to cart" />
+                    <img className="button-icon" src="/pepper-store/build//images/icons/white-plus.png" alt="add to cart" title="add to cart" />
                 </button>
             </div>
         </div>

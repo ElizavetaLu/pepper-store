@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectSection } from "../../redux/actions/actions"
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Navigation } from "swiper";
-import Card from "../product-card/Card";
 import SectionTitle from "../section-title/SectionTitle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid, Pagination } from "swiper";
+import Card from "../product-card/Card";
 
 import "swiper/css";
 import "swiper/css/grid";
-import 'swiper/css/navigation';
-import "./considerSection.scss"
+import "./considerSection.scss";
+import 'swiper/css/pagination';
+
 
 const ConsiderSection = () => {
 
@@ -38,9 +39,11 @@ const ConsiderSection = () => {
                 <Swiper
                     slidesPerView={5}
                     grid={{ rows: 2 }}
-                    spaceBetween={15}
-                    navigation
-                    modules={[Grid, Navigation]}
+                    spaceBetween={20}
+                    pagination={{
+                        dynamicBullets: true,
+                    }}
+                    modules={[Grid, Pagination]}
                     className="mySwiper"
                 >
 
