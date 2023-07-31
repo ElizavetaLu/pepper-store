@@ -69,7 +69,7 @@ const Chat = () => {
         <div className={isChatActive ? "chat active" : "chat"} onClick={() => dispatch(openCloseChat())}>
             <div className="chat-content" onClick={e => e.stopPropagation()}>
                 <div className="chat-header">
-                    <img className="logo" src="/images/icons/logo.png" alt="" />
+                    <img className="logo" src="/pepper-store/build//images/icons/logo.png" alt="" />
                     <div className="info">
                         <div className="name">Name</div>
                         <div className="text">Text us if you have any questions</div>

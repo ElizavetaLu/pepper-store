@@ -29,6 +29,15 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
+
+            .product-marker {
+                padding: 0 10px;
+                height: 30px;
+
+                .product-marker-text {
+                    font-size: 14px;
+                }
+            }
         }
 
         .close-button {
@@ -175,7 +184,7 @@
                                 outline: none;
                                 font-size: 20px;
                                 text-align: center;
-                            } 
+                            }
                         }
                     }
                 }
@@ -184,21 +193,24 @@
                     margin: 20px 0;
                     display: flex;
                     width: 100%;
+                    background-color: $light-background;
+                    padding: 5px;
+                    border-radius: 50px;
 
                     .nav-button {
                         text-transform: capitalize;
                         font-size: 17px;
-                        padding-bottom: 2px;
+                        padding: 10px 5px;
                         cursor: pointer;
                         width: 50%;
                         border: none;
                         background-color: transparent;
-                        border-bottom: 1.5px solid $light-background;
-
+                        transition: all .2s ease-out;
                     }
 
                     .nav-button.active {
-                        border-bottom: 1.5px solid #48293673;
+                        border-radius: 50px;
+                        background-color: #bcd695;
                     }
                 }
 

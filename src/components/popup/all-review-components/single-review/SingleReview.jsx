@@ -26,7 +26,7 @@ const SingleReview = ({ review, creationTime, rating }) => {
     return (
         <div className="review-card">
             <div className="avatar">
-                <img className="avatar-img" src="/images/icons/user-avatar.png" alt="avatar" />
+                <img className="avatar-img" src="/pepper-store/build//images/icons/user-avatar.png" alt="avatar" />
             </div>
 
             <div className="review-data">
@@ -38,7 +38,7 @@ const SingleReview = ({ review, creationTime, rating }) => {
                     {
                         [...Array(rating)].map((_, indx) => {
                             return (
-                                <img key={indx} className="star" src="/images/icons/star.png" alt="star" />
+                                <img key={indx} className="star" src="/pepper-store/build//images/icons/star.png" alt="star" />
                             )
                         })
                     }

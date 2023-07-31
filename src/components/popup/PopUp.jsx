@@ -65,7 +65,7 @@ const PopUp = ({ isActive }) => {
                     <div className="background"></div>
 
                     <button className="close-button" onClick={closeModal}>
-                        <img className="close-icon" src="/images/icons/white-plus.png" alt="" />
+                        <img className="close-icon" src="/pepper-store/build//images/icons/white-plus.png" alt="" />
                     </button>
 
                     <div className="photo-container">
@@ -106,7 +106,7 @@ const PopUp = ({ isActive }) => {
                                             if (value === 0.1) return
                                             setValue(prev => Number((prev - 0.1).toFixed(2)))
                                         }}>
-                                            <img className="item-icon" src="/images/icons/white-minus.png" alt="" />
+                                            <img className="item-icon" src="/pepper-store/build//images/icons/white-minus.png" alt="" />
                                         </button>
 
                                         <input
@@ -118,7 +118,7 @@ const PopUp = ({ isActive }) => {
                                         />
 
                                         <button className="item" onClick={() => setValue(prev => Number((prev + 0.1).toFixed(2)))}>
-                                            <img className="item-icon" src="/images/icons/white-plus.png" alt="" />
+                                            <img className="item-icon" src="/pepper-store/build//images/icons/white-plus.png" alt="" />
                                         </button>
                                     </div>
                                 </div>

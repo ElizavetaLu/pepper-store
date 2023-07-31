@@ -3,6 +3,9 @@
 .card {
     width: 200px;
     cursor: pointer;
+    box-shadow: 2px 2px 8px #00000012;
+    border-radius: 2px;
+    overflow: hidden;
 
     .photo-container {
         position: relative;
@@ -85,7 +88,6 @@
             .button-icon {
                 width: 19px;
                 height: 19px;
-                // transition: all .2s ease-out;
             }
         }
 
